@@ -9,6 +9,7 @@ ExecStart=/usr/bin/node /home/STONfiHackathon/server.mjs
 Restart=always
 RestartSec=5
 Environment=PORT=3000
+Environment=NODE_ENV=production
 User=root
 
 [Install]
