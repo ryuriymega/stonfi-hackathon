@@ -1,0 +1,34 @@
+# TON Compass
+
+TON Compass is a fast-to-ship hackathon MVP for the STON.fi track: a guided first-swap app for new TON users.
+
+## Why this concept
+
+- It has a clear use case: help a first-time TON user take one confident DeFi action.
+- It qualifies for the STON.fi track through a real STON.fi integration.
+- It is small enough to finish quickly, but still looks like a product instead of a raw SDK demo.
+
+## Stack
+
+- Dependency-free Node server
+- Dynamic `tonconnect-manifest.json`
+- Official STON.fi Omniston Widget via CDN
+- Static frontend in `public/`
+
+## Run
+
+```bash
+npm start
+```
+
+Then open `http://localhost:3000`.
+
+## Suggested application pitch
+
+TON Compass is a beginner-friendly front door to TON DeFi. Instead of exposing a new user to every possible token and action at once, it frames the first move with simple presets and plain-language guidance, while delegating the real swap execution to the official STON.fi widget. The result is a lightweight product that is fast to ship, easy to demo, and directly useful for onboarding.
+
+## Repo extras
+
+- `SUBMISSION.md` – ready-to-use pitch and demo draft
+- `ROADMAP.md` – immediate post-hackathon growth plan
+- `ops/ton-compass.service` – systemd unit template for running on this server

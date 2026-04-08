@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TON Compass is a guided first-swap app built for the STON.fi Vibe Coding Hackathon."
+    />
+    <title>TON Compass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="backdrop backdrop-a"></div>
+    <div class="backdrop backdrop-b"></div>
+    <div class="noise"></div>
+
+    <header class="site-header">
+      <div class="brand-lockup">
+        <div class="brand-mark">TC</div>
+        <div>
+          <p class="eyebrow">Hackathon-ready TON mini product</p>
+          <h1>TON Compass</h1>
+        </div>
+      </div>
+      <a class="ghost-link" href="#swap-panel">Open swap panel</a>
+    </header>
+
+    <main class="page-grid">
+      <section class="hero">
+        <p class="hero-chip">Built for the STON.fi track</p>
+        <h2>Your first TON DeFi move, minus the chaos.</h2>
+        <p class="hero-copy">
+          TON Compass is a guided first-swap page for people who want one clear starting point,
+          plain-English context, and a real STON.fi execution path instead of a wall of DeFi
+          controls.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-link" href="#swap-panel">Start with STON.fi</a>
+          <a class="secondary-link" href="#project-notes">Why this works for the hackathon</a>
+        </div>
+
+        <div class="stat-row">
+          <article class="stat-card">
+            <span class="stat-label">Use case</span>
+            <strong>First swap onboarding</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Integration</span>
+            <strong>STON.fi Omniston Widget</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Build style</span>
+            <strong>No-build Node server</strong>
+          </article>
+        </div>
+      </section>
+
+      <aside class="swap-panel" id="swap-panel">
+        <div class="panel-topline">
+          <span class="panel-tag">Live integration zone</span>
+          <span class="panel-status" id="widget-status">Loading widget...</span>
+        </div>
+
+        <div class="mode-copy">
+          <p class="mode-label">Current route</p>
+          <h3 id="mode-title">Start inside the STON ecosystem</h3>
+          <p id="mode-description">
+            The widget starts with TON → STON so the first action feels concrete. Users can still
+            change either token directly in the swap UI.
+          </p>
+        </div>
+
+        <div class="widget-shell">
+          <div id="omniston-widget-container"></div>
+          <div id="widget-fallback" class="widget-fallback hidden">
+            The STON.fi widget script did not load. Check network access or open the page from a
+            public URL.
+          </div>
+        </div>
+      </aside>
+
+      <section class="cards-section">
+        <div class="section-heading">
+          <p class="eyebrow">Three simple entry points</p>
+          <h3>Enough product shape to be credible, still small enough to ship fast.</h3>
+        </div>
+
+        <div class="mode-grid">
+          <article class="idea-card active" data-mode="ecosystem">
+            <p class="card-index">01</p>
+            <h4>Ecosystem entry</h4>
+            <p>
+              Default the user into TON → STON and explain what they are about to do in normal
+              words.
+            </p>
+            <button class="mode-button" type="button">Use this preset</button>
+          </article>
+
+          <article class="idea-card" data-mode="open">
+            <p class="card-index">02</p>
+            <h4>Open market mode</h4>
+            <p>
+              Remove the preset pair and let the user choose any TON asset while keeping the same
+              clean wrapper.
+            </p>
+            <button class="mode-button" type="button">Switch to open mode</button>
+          </article>
+
+          <article class="idea-card" data-mode="learn">
+            <p class="card-index">03</p>
+            <h4>Learn before swap</h4>
+            <p>
+              Keep the widget live, but frame it as a beginner education page with gas, slippage,
+              and first-step notes.
+            </p>
+            <button class="mode-button" type="button">Show learning mode</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="notes-section" id="project-notes">
+        <div class="section-heading">
+          <p class="eyebrow">Why this is the right hackathon move</p>
+          <h3>It looks like a product, not a demo script.</h3>
+        </div>
+
+        <div class="notes-grid">
+          <article class="note-card">
+            <h4>Clear problem</h4>
+            <p>
+              New TON users often do not need advanced DeFi. They need one trusted front door for a
+              first action.
+            </p>
+          </article>
+          <article class="note-card">
+            <h4>Real integration</h4>
+            <p>
+              The core interaction is delegated to the official STON.fi Omniston widget, so the app
+              is not pretending to be on-chain.
+            </p>
+          </article>
+          <article class="note-card">
+            <h4>Deployable today</h4>
+            <p>
+              No framework, no build step, no dependency install. Push the repo and run the Node
+              server on any box.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>TON Compass. Guided first-swap UI for the STON.fi Vibe Coding Hackathon.</p>
+    </footer>
+
+    <script src="https://widget.ston.fi/v0/index.js"></script>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
