@@ -1,5 +1,6 @@
 const TON_ASSET = "EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c";
 const STON_ASSET = "EQA2kCVNwVsil2EM2mB0SkXytxCqQjS4mttjDpnXmwG9T6bO";
+const BASE_PATH = window.location.pathname.replace(/[^/]*$/, "");
 
 const modeConfig = {
   ecosystem: {
@@ -42,7 +43,7 @@ const elements = {
 let mountedWidget = null;
 
 function manifestUrl() {
-  return `${window.location.origin}/tonconnect-manifest.json`;
+  return `${window.location.origin}${BASE_PATH}tonconnect-manifest.json`;
 }
 
 function updateCopy(mode) {

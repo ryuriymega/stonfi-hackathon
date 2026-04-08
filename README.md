@@ -10,8 +10,9 @@ TON Compass is a fast-to-ship hackathon MVP for the STON.fi track: a guided firs
 
 ## Stack
 
-- Dependency-free Node server
-- Dynamic `tonconnect-manifest.json`
+- Node-RED `HTTP In` flow deployment for production
+- Dependency-free Node server for local fallback development
+- Dynamic `tonconnect-manifest.json` endpoint
 - Official STON.fi Omniston Widget via CDN
 - Static frontend in `public/`
 
@@ -23,6 +24,19 @@ npm start
 
 Then open `http://localhost:3000`.
 
+## Node-RED deployment
+
+This server already has Node-RED running as a system service with HTTPS enabled. The intended public app path is:
+
+`https://forlearningandcerts.sellsystems.agency:49184/ton-compass/index.html`
+
+The production deployment is driven by:
+
+- `ops/nodered/flows.json` – the flow definition
+- `ops/deploy-to-nodered.sh` – copies the flow into `~/.node-red/flows.json` and restarts `nodered.service`
+
+The frontend is written to work from a subpath so it can be mounted by Node-RED routes.
+
 ## Suggested application pitch
 
 TON Compass is a beginner-friendly front door to TON DeFi. Instead of exposing a new user to every possible token and action at once, it frames the first move with simple presets and plain-language guidance, while delegating the real swap execution to the official STON.fi widget. The result is a lightweight product that is fast to ship, easy to demo, and directly useful for onboarding.
@@ -31,4 +45,5 @@ TON Compass is a beginner-friendly front door to TON DeFi. Instead of exposing a
 
 - `SUBMISSION.md` – ready-to-use pitch and demo draft
 - `ROADMAP.md` – immediate post-hackathon growth plan
-- `ops/ton-compass.service` – systemd unit template for running on this server
+- `ops/nodered/flows.json` – working Node-RED flow deployment
+- `ops/deploy-to-nodered.sh` – deployment helper for the Node-RED instance
