@@ -304,6 +304,49 @@ body {
   color: var(--ink-soft);
 }
 
+.prep-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 12px;
+  margin: 8px 0 18px;
+}
+
+.prep-card {
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.64);
+  padding: 16px 18px;
+}
+
+.prep-card-accent {
+  background: linear-gradient(135deg, rgba(200, 255, 90, 0.34), rgba(255, 255, 255, 0.72));
+}
+
+.prep-label {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.prep-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.prep-list li + li {
+  margin-top: 8px;
+}
+
+.prep-outcome {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
 .widget-shell {
   padding: 16px;
   border-radius: 28px;
@@ -434,7 +477,8 @@ body {
 
   .mode-grid,
   .notes-grid,
-  .stat-row {
+  .stat-row,
+  .prep-grid {
     grid-template-columns: 1fr;
   }
 }
