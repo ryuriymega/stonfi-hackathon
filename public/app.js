@@ -222,7 +222,13 @@ function updateCopy(mode) {
   elements.shareStatus.textContent = "Shareable preset ready";
 
   elements.cards.forEach((card) => {
-    card.classList.toggle("active", card.dataset.mode === mode);
+    const active = card.dataset.mode === mode;
+    card.classList.toggle("active", active);
+    const button = card.querySelector(".mode-button");
+    if (button) {
+      button.textContent = active ? "Active route" : "Activate route";
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    }
   });
 }
 
@@ -239,6 +245,7 @@ function renderReadiness(mode) {
         <button
           class="readiness-item ${readinessState[index] ? "done" : ""}"
           data-index="${index}"
+          aria-pressed="${readinessState[index] ? "true" : "false"}"
           type="button"
         >
           <span class="readiness-dot" aria-hidden="true"></span>
@@ -256,7 +263,9 @@ function resetReadiness(mode) {
 
 function updateBuilderControls() {
   elements.builderChoices.forEach((choice) => {
-    choice.classList.toggle("selected", builderState[choice.dataset.group] === choice.dataset.value);
+    const selected = builderState[choice.dataset.group] === choice.dataset.value;
+    choice.classList.toggle("selected", selected);
+    choice.setAttribute("aria-pressed", selected ? "true" : "false");
   });
 }
 
