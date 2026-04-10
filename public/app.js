@@ -184,6 +184,11 @@ const elements = {
   nextNote: document.querySelector("#next-note"),
   copyRouteLink: document.querySelector("#copy-route-link"),
   shareStatus: document.querySelector("#share-status"),
+  jumpPlanner: document.querySelector("#jump-planner"),
+  inlineBuilderTitle: document.querySelector("#inline-builder-title"),
+  inlineAfterTag: document.querySelector("#inline-after-tag"),
+  inlineProLink: document.querySelector("#inline-pro-link"),
+  inlineProTag: document.querySelector("#inline-pro-tag"),
   builderRouteTitle: document.querySelector("#builder-route-title"),
   builderReason: document.querySelector("#builder-reason"),
   builderSummaryExecution: document.querySelector("#builder-summary-execution"),
@@ -303,6 +308,7 @@ function updateCopy(mode) {
   elements.nextLink.textContent = config.nextMove.cta;
   elements.nextNote.textContent = config.nextMove.note;
   elements.orbitNextTag.textContent = config.orbitNext;
+  elements.inlineAfterTag.textContent = config.orbitNext;
   elements.readinessTitle.textContent = config.readinessTitle;
   elements.shareStatus.textContent = "";
 
@@ -334,6 +340,8 @@ function renderProOffer(mode) {
   elements.proCta.textContent = config.cta;
   elements.proCta.href = telegramPreviewUrl(mode);
   elements.proCta.setAttribute("aria-label", `${config.cta} for ${mode}`);
+  elements.inlineProLink.href = telegramPreviewUrl(mode);
+  elements.inlineProTag.textContent = config.cta;
 
   elements.proList.replaceChildren(
     ...config.bullets.map((item) => {
@@ -463,6 +471,7 @@ function getBuilderRecommendation() {
 function renderBuilderRecommendation() {
   const recommendation = getBuilderRecommendation();
   elements.builderRouteTitle.textContent = recommendation.title;
+  elements.inlineBuilderTitle.textContent = recommendation.title;
   elements.builderReason.textContent = recommendation.reason;
   elements.builderSummaryExecution.textContent = recommendation.execution;
   elements.builderSummaryAfter.textContent = recommendation.after;
@@ -589,6 +598,12 @@ elements.readinessList?.addEventListener("click", (event) => {
 });
 
 elements.copyRouteLink?.addEventListener("click", copyRouteLink);
+elements.jumpPlanner?.addEventListener("click", () => {
+  document.querySelector("#planner")?.scrollIntoView({
+    behavior: prefersReducedMotion() ? "auto" : "smooth",
+    block: "start",
+  });
+});
 elements.applyBuilderRoute?.addEventListener("click", () => {
   const recommendationMode = elements.applyBuilderRoute.dataset.mode || "ecosystem";
   activateMode(recommendationMode, { scrollToSwap: true });
