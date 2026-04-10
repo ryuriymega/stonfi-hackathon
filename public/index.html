@@ -42,16 +42,16 @@
         <section class="hero-stage">
           <div class="hero-copy">
             <p class="hero-chip">Built for the STON.fi track</p>
-            <h2>Make a first TON DeFi move feel calm, legible, and worth repeating.</h2>
+            <h2>First TON move. Routed for humans.</h2>
             <p class="hero-text">
-              TON Compass turns the first swap into a guided route instead of a raw terminal. Pick
-              an intent, understand the trade, execute through STON.fi, then continue into the next
-              TON move with confidence.
+              TON Compass narrows the first DeFi step into a guided route, a live STON.fi execution
+              panel, and a credible next move. The goal is not to mimic a DEX. The goal is to make
+              the first TON action feel safe enough to repeat.
             </p>
 
             <div class="hero-actions">
-              <a class="primary-link" href="#swap-panel">Start the live swap</a>
-              <a class="secondary-link" href="#routes">Explore route presets</a>
+              <a class="primary-link" href="#planner">Build a route</a>
+              <a class="secondary-link" href="#swap-panel">Open the live panel</a>
             </div>
 
             <div class="signal-strip">
@@ -71,37 +71,140 @@
           </div>
 
           <div class="hero-visual">
-            <div class="orbital-stage">
-              <div class="orbital-ring ring-a"></div>
-              <div class="orbital-ring ring-b"></div>
-              <div class="orbital-ring ring-c"></div>
+            <div class="brief-stage">
+              <div class="brief-topline">
+                <p class="core-label">Route brief</p>
+                <span class="brief-badge" id="brief-badge">Guided continuation</span>
+              </div>
 
-              <div class="orbital-core">
-                <p class="core-label">Selected route</p>
+              <div class="brief-core">
                 <h3 id="route-short">TON → STON</h3>
                 <p id="route-stance">One obvious ecosystem first step for a brand-new TON user.</p>
               </div>
 
-              <div class="orbit-tag orbit-tag-a">
-                <span>Wallet</span>
-                Connect once
+              <div class="brief-grid">
+                <article>
+                  <span>Wallet</span>
+                  <strong>Connect once</strong>
+                </article>
+                <article>
+                  <span>Execution</span>
+                  <strong>Official STON.fi</strong>
+                </article>
+                <article>
+                  <span>After</span>
+                  <strong id="orbit-next-tag">Tonstakers-ready</strong>
+                </article>
               </div>
-              <div class="orbit-tag orbit-tag-b">
-                <span>Execution</span>
-                Official STON.fi
-              </div>
-              <div class="orbit-tag orbit-tag-c" id="orbit-next-tag">
-                <span>Next move</span>
-                Tonstakers-ready
+
+              <div class="brief-story">
+                <article>
+                  <span>01</span>
+                  <p>Choose an intent instead of starting from a blank market terminal.</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <p>Launch the real swap through STON.fi with route-specific coaching.</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <p>Continue into the next TON action instead of dead-ending at the widget.</p>
+                </article>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section class="builder-section" id="planner">
+          <div class="section-heading">
+            <p class="eyebrow">Journey builder</p>
+            <h3>Turn a vague goal into a real first-move route.</h3>
+            <p class="section-copy">
+              This is the fast product layer that makes TON Compass more than a wrapper. Pick the
+              user profile, generate a recommendation, then launch that route into the live panel.
+            </p>
+          </div>
+
+          <div class="builder-grid">
+            <div class="builder-controls">
+              <article class="builder-group">
+                <p class="builder-label">Goal</p>
+                <div class="builder-options">
+                  <button class="builder-choice selected" data-group="goal" data-value="ecosystem" type="button">
+                    Enter ecosystem
+                  </button>
+                  <button class="builder-choice" data-group="goal" data-value="explore" type="button">
+                    Explore market
+                  </button>
+                  <button class="builder-choice" data-group="goal" data-value="learn" type="button">
+                    Learn safely
+                  </button>
+                  <button class="builder-choice" data-group="goal" data-value="yield" type="button">
+                    Earn yield later
+                  </button>
+                </div>
+              </article>
+
+              <article class="builder-group">
+                <p class="builder-label">Experience</p>
+                <div class="builder-options">
+                  <button class="builder-choice selected" data-group="experience" data-value="first" type="button">
+                    First on-chain action
+                  </button>
+                  <button class="builder-choice" data-group="experience" data-value="some" type="button">
+                    Some wallet experience
+                  </button>
+                  <button class="builder-choice" data-group="experience" data-value="ready" type="button">
+                    Ready to browse
+                  </button>
+                </div>
+              </article>
+
+              <article class="builder-group">
+                <p class="builder-label">TON available</p>
+                <div class="builder-options">
+                  <button class="builder-choice selected" data-group="balance" data-value="small" type="button">
+                    Small test amount
+                  </button>
+                  <button class="builder-choice" data-group="balance" data-value="enough" type="button">
+                    2.2+ TON available
+                  </button>
+                  <button class="builder-choice" data-group="balance" data-value="browse" type="button">
+                    Just exploring
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <aside class="builder-output">
+              <p class="builder-output-label">Recommended route</p>
+              <h4 id="builder-route-title">Learn before you swap</h4>
+              <p class="builder-reason" id="builder-reason">
+                First-time users should see explanation before they see optionality.
+              </p>
+
+              <div class="builder-summary">
+                <article>
+                  <span>Execution</span>
+                  <strong id="builder-summary-execution">STON.fi guided swap</strong>
+                </article>
+                <article>
+                  <span>After</span>
+                  <strong id="builder-summary-after">Repeat with more confidence</strong>
+                </article>
+              </div>
+
+              <button class="primary-link builder-apply" id="apply-builder-route" type="button">
+                Apply recommendation
+              </button>
+            </aside>
           </div>
         </section>
 
         <section class="routes-section" id="routes">
           <div class="section-heading">
             <p class="eyebrow">Intent routes</p>
-            <h3>Choose a route, not a wall of controls.</h3>
+            <h3>Or switch routes manually.</h3>
             <p class="section-copy">
               Each route updates the live widget, the checklist, and the next-step handoff. The URL
               updates too, so every guided path can be shared directly.
@@ -283,15 +386,24 @@
           </article>
         </div>
 
+        <article class="readiness-card">
+          <div class="readiness-topline">
+            <div>
+              <p class="prep-label">Swap readiness</p>
+              <h4 id="readiness-title">Complete the preflight before opening the wallet.</h4>
+            </div>
+            <strong class="readiness-score" id="readiness-score">0%</strong>
+          </div>
+          <div class="readiness-bar">
+            <span id="readiness-bar-fill"></span>
+          </div>
+          <div class="readiness-list" id="readiness-list"></div>
+        </article>
+
         <div class="share-row">
           <button class="tertiary-button" id="copy-route-link" type="button">Copy route link</button>
           <span class="share-status" id="share-status" aria-live="polite">Shareable preset ready</span>
         </div>
-
-        <article class="prep-card">
-          <p class="prep-label">Before you confirm</p>
-          <ul class="prep-list" id="prep-list"></ul>
-        </article>
 
         <div class="widget-shell">
           <div id="omniston-widget-container"></div>

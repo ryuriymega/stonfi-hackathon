@@ -14,7 +14,7 @@ Most DeFi products assume the user already understands wallets, gas, slippage, t
 
 ## Solution
 
-TON Compass narrows the first TON DeFi action into guided routes. Each route updates the live STON.fi widget, a plain-language checklist, and the suggested next step. The current version supports three entry modes, persistent route selection, shareable route URLs, and a Tonstakers continuation layer for users who want a yield-oriented follow-up action.
+TON Compass narrows the first TON DeFi action into guided routes. Each route updates the live STON.fi widget, a preflight readiness layer, and the suggested next step. The current version supports a lightweight Journey Builder that recommends the right route for the user profile, three entry modes, persistent route selection, shareable route URLs, and a Tonstakers continuation layer for users who want a yield-oriented follow-up action.
 
 ## Why this project should be accepted
 
@@ -27,6 +27,8 @@ TON Compass narrows the first TON DeFi action into guided routes. Each route upd
 
 - Public demo is live
 - GitHub repository is live
+- The app includes a Journey Builder that maps user intent to the recommended route
+- The live panel now includes an interactive readiness / preflight layer
 - The app now supports three guided swap routes
 - Route presets are shareable through URL state
 - The product includes a Tonstakers continuation path for the next TON action

@@ -11,10 +11,12 @@ TON Compass is a guided first-move app for TON DeFi. It wraps the official STON.
 
 ## Current product shape
 
+- Journey Builder that recommends the best first route based on user intent
 - Three guided swap routes:
   - Ecosystem entry
   - Open market mode
   - Learn before swap
+- Interactive swap readiness / preflight layer before opening the wallet
 - Shareable route URLs via `?mode=...`
 - Sticky live execution panel powered by the official STON.fi widget
 - Tonstakers-ready post-swap continuation for yield-oriented users

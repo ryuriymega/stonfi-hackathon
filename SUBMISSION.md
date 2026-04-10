@@ -22,12 +22,14 @@ TON Compass reduces the first move into guided routes. Each route updates the li
 ## Current functionality
 
 - Premium product-style landing experience around the live swap flow
+- Journey Builder that maps user intent into the recommended first route
 - Three guided routes:
   - Ecosystem entry
   - Open market mode
   - Learn before swap
 - Shareable route presets via URL state such as `?mode=learn`
-- Dynamic route-specific checklist and next-step panel
+- Interactive readiness / preflight layer before opening the wallet
+- Dynamic route-specific next-step panel
 - Tonstakers continuation layer for users who want a yield-oriented follow-up action
 - Dynamic TON Connect manifest endpoint
 - Live STON.fi widget mount via the official CDN script
@@ -36,6 +38,7 @@ TON Compass reduces the first move into guided routes. Each route updates the li
 
 - The core transaction flow is real, not mocked
 - The app behaves like a product, not a single embed block
+- The Journey Builder gives the user an onboarding decision path instead of a static mode switcher
 - Route sharing and persistent intent state make the onboarding logic reusable
 - The Tonstakers handoff proves this can grow into a full TON journey instead of a one-screen demo
 
@@ -51,11 +54,13 @@ TON Compass reduces the first move into guided routes. Each route updates the li
 1. Open TON Compass
    `https://forlearningandcerts.sellsystems.agency:49184/ton-compass/index.html`
 2. Explain the problem: most first-time TON users do not need a raw DeFi interface
-3. Switch between the three route presets and show that the page changes around the same live widget
-4. Show that the route is shareable by copying the preset URL
-5. Open the live STON.fi widget and execute the swap flow
-6. Show the Tonstakers continuation panel as the next TON action after the swap
-7. Close by framing TON Compass as the first layer of a broader TON onboarding product
+3. Use the Journey Builder to generate a recommended route for a first-time user
+4. Switch between the three route presets and show that the page changes around the same live widget
+5. Show the interactive readiness layer before opening the wallet
+6. Show that the route is shareable by copying the preset URL
+7. Open the live STON.fi widget and execute the swap flow
+8. Show the Tonstakers continuation panel as the next TON action after the swap
+9. Close by framing TON Compass as the first layer of a broader TON onboarding product
 
 ## Quick links
 
