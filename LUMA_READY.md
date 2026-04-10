@@ -23,9 +23,11 @@ TON Compass narrows the first interaction into guided routes. Each route updates
 ## Why this project should be selected
 
 - It solves a real onboarding problem for TON users
+- It is a new project being built specifically for this hackathon
 - It already has a live public demo and a public GitHub repository
 - It uses the official STON.fi widget for real execution, not a mocked flow
 - It is small enough to ship during the hackathon and strong enough to keep growing afterward
+- We are ready to keep building during the official hackathon window and submit a full package on time
 
 ## Current functionality
 
@@ -45,3 +47,15 @@ TON Compass narrows the first interaction into guided routes. Each route updates
 ## Super short fallback version
 
 TON Compass is a guided first-swap experience for TON that wraps the official STON.fi widget in a simpler onboarding layer with shareable presets and a Tonstakers-ready continuation path.
+
+## If the form asks about motivation
+
+We want to join because this hackathon is explicitly focused on shipping a real TON product fast, not just prototyping. TON Compass matches that format well: it addresses a clear onboarding problem, already has a live working base, and can be improved meaningfully during the build window.
+
+## If the form asks about commitment
+
+We are prepared to work through the full hackathon period, keep iterating on the live app, and submit the complete package with a working public URL, GitHub repository, and recorded demo.
+
+## If the form asks whether the project is new
+
+Yes. TON Compass is a new project being built specifically for this hackathon.
