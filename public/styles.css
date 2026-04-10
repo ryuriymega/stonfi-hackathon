@@ -829,6 +829,7 @@ button:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
   gap: 18px;
+  align-items: stretch;
 }
 
 .readiness-card,
@@ -944,6 +945,24 @@ button:focus-visible {
   color: var(--ink-soft);
   font-size: 0.9rem;
   opacity: 0.78;
+}
+
+@media (min-width: 980px) {
+  .journey-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .timeline-step-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-content: start;
+    min-height: 100%;
+  }
+
+  .timeline-step {
+    width: 42px;
+    height: 42px;
+  }
 }
 
 @media (min-width: 1181px) {
@@ -1157,6 +1176,75 @@ button:focus-visible {
 
   .copy-button {
     font-size: 0.96rem;
+  }
+}
+
+@media (max-width: 430px) and (max-height: 900px) {
+  .site-header {
+    padding: 12px 0 8px;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .brand-copy h1 {
+    font-size: 1rem;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .ghost-link {
+    min-height: 40px;
+    padding: 8px 12px;
+  }
+
+  .panel-light,
+  .panel-dark,
+  .swap-panel {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .swap-panel {
+    gap: 10px;
+  }
+
+  .panel-topline h2 {
+    font-size: 1.48rem;
+    max-width: 9ch;
+  }
+
+  .mode-copy {
+    font-size: 0.84rem;
+    line-height: 1.42;
+  }
+
+  .route-rail {
+    gap: 8px;
+  }
+
+  .route-switch {
+    font-size: 0.84rem;
+    padding: 10px 8px;
+  }
+
+  .copy-button {
+    font-size: 0.92rem;
+  }
+
+  .widget-shell {
+    min-height: 312px;
+    padding: 10px;
+  }
+
+  #omniston-widget-container {
+    min-height: 288px;
   }
 }
 
