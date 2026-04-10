@@ -110,6 +110,7 @@ const modeConfig = {
 const elements = {
   body: document.body,
   cards: Array.from(document.querySelectorAll(".route-option")),
+  quickModes: Array.from(document.querySelectorAll("[data-mode-switch]")),
   builderChoices: Array.from(document.querySelectorAll(".builder-choice")),
   container: document.querySelector("#omniston-widget-container"),
   fallback: document.querySelector("#widget-fallback"),
@@ -229,6 +230,12 @@ function updateCopy(mode) {
       button.textContent = active ? "Active route" : "Activate route";
       button.setAttribute("aria-pressed", active ? "true" : "false");
     }
+  });
+
+  elements.quickModes.forEach((button) => {
+    const active = button.dataset.modeSwitch === mode;
+    button.classList.toggle("selected", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
   });
 }
 
@@ -420,6 +427,10 @@ async function copyRouteLink() {
 elements.cards.forEach((card) => {
   const button = card.querySelector(".mode-button");
   button?.addEventListener("click", () => activateMode(card.dataset.mode));
+});
+
+elements.quickModes.forEach((button) => {
+  button.addEventListener("click", () => activateMode(button.dataset.modeSwitch));
 });
 
 elements.builderChoices.forEach((choice) => {

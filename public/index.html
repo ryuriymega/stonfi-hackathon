@@ -58,6 +58,12 @@
             <span>Tonstakers continuation</span>
           </div>
 
+          <div class="route-switcher" aria-label="Quick route switch">
+            <button class="route-switch selected" data-mode-switch="ecosystem" type="button">Ecosystem</button>
+            <button class="route-switch" data-mode-switch="open" type="button">Open</button>
+            <button class="route-switch" data-mode-switch="learn" type="button">Learn</button>
+          </div>
+
           <div class="brief-stage">
             <div class="brief-topline">
               <p class="core-label">Current route</p>
@@ -227,6 +233,19 @@
             change either token directly in the swap UI.
           </p>
 
+          <div class="share-row">
+            <button class="tertiary-button" id="copy-route-link" type="button">Copy route link</button>
+            <span class="share-status" id="share-status" aria-live="polite">Shareable preset ready</span>
+          </div>
+
+          <div class="widget-shell">
+            <div id="omniston-widget-container"></div>
+            <div id="widget-fallback" class="widget-fallback hidden">
+              The STON.fi widget script did not load. Check network access or open the page from a
+              public URL.
+            </div>
+          </div>
+
           <div class="console-metrics">
             <article>
               <span class="console-label">Best for</span>
@@ -240,19 +259,6 @@
               <span class="console-label">After swap</span>
               <strong id="route-after">Continue deeper into TON</strong>
             </article>
-          </div>
-
-          <div class="share-row">
-            <button class="tertiary-button" id="copy-route-link" type="button">Copy route link</button>
-            <span class="share-status" id="share-status" aria-live="polite">Shareable preset ready</span>
-          </div>
-
-          <div class="widget-shell">
-            <div id="omniston-widget-container"></div>
-            <div id="widget-fallback" class="widget-fallback hidden">
-              The STON.fi widget script did not load. Check network access or open the page from a
-              public URL.
-            </div>
           </div>
         </article>
 
