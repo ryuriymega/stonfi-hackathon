@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "deck:build": "node submission/deck-src/ton_compass_demo_deck.cjs"
+  },
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
   }
 }
