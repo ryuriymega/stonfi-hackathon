@@ -5,9 +5,9 @@ const STORAGE_KEY = "ton-compass-mode";
 
 const modeConfig = {
   ecosystem: {
-    title: "Start inside the STON ecosystem",
+    title: "Start with TON → STON",
     description:
-      "The widget starts with TON → STON so the first action feels concrete. Users can still change either token directly in the swap UI.",
+      "Start with one concrete route, then adjust inside the live STON.fi swap.",
     routeShort: "TON → STON",
     stance: "One obvious ecosystem first step for a brand-new TON user.",
     briefBadge: "Ecosystem first move",
@@ -41,7 +41,7 @@ const modeConfig = {
   open: {
     title: "Open market mode",
     description:
-      "This preset removes the output token hint and lets the user browse the full widget as a clean first-swap terminal.",
+      "Keep the wrapper calm, remove the preset output, and let the user browse the full STON.fi surface.",
     routeShort: "TON → Any",
     stance: "A calmer wrapper for users who already know they want optionality.",
     briefBadge: "Market browsing route",
@@ -72,9 +72,9 @@ const modeConfig = {
     },
   },
   learn: {
-    title: "Learn before you swap",
+    title: "Learn the route first",
     description:
-      "Use the same STON.fi execution path, but frame it as an onboarding experience with context and beginner guidance around the live action.",
+      "Use the same live STON.fi execution path, but add guidance before the first decision.",
     routeShort: "Learn → Swap",
     stance: "Keep the trade live, but let explanation lead the interaction.",
     briefBadge: "Explanation-first route",
@@ -142,7 +142,7 @@ const elements = {
   applyBuilderRoute: document.querySelector("#apply-builder-route"),
 };
 
-let currentMode = "ecosystem";
+let currentMode = null;
 let mountedWidget = null;
 let readinessState = [];
 const builderState = {
@@ -153,6 +153,10 @@ const builderState = {
 
 function manifestUrl() {
   return `${window.location.origin}${BASE_PATH}tonconnect-manifest.json`;
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
 function shareUrl(mode) {
@@ -177,11 +181,20 @@ function persistMode(mode) {
   }
 }
 
-function resolveInitialMode() {
+function readModeFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const fromUrl = params.get("mode");
 
   if (fromUrl && modeConfig[fromUrl]) {
+    return fromUrl;
+  }
+
+  return null;
+}
+
+function resolveInitialMode() {
+  const fromUrl = readModeFromUrl();
+  if (fromUrl) {
     return fromUrl;
   }
 
@@ -193,11 +206,19 @@ function resolveInitialMode() {
   return "ecosystem";
 }
 
-function syncLocation(mode) {
+function syncLocation(mode, { replace = false } = {}) {
   const url = new URL(window.location.href);
   url.searchParams.set("mode", mode);
-  window.history.replaceState({}, "", url);
+  const method = replace ? "replaceState" : "pushState";
+  window.history[method]({ mode }, "", url);
   persistMode(mode);
+}
+
+function scrollSwapPanelIntoView() {
+  document.querySelector("#swap-panel")?.scrollIntoView({
+    behavior: prefersReducedMotion() ? "auto" : "smooth",
+    block: "start",
+  });
 }
 
 function updateCopy(mode) {
@@ -220,15 +241,15 @@ function updateCopy(mode) {
   elements.nextNote.textContent = config.nextMove.note;
   elements.orbitNextTag.textContent = config.orbitNext;
   elements.readinessTitle.textContent = config.readinessTitle;
-  elements.shareStatus.textContent = "Shareable preset ready";
+  elements.shareStatus.textContent = "";
 
   elements.cards.forEach((card) => {
     const active = card.dataset.mode === mode;
     card.classList.toggle("active", active);
-    const button = card.querySelector(".mode-button");
-    if (button) {
-      button.textContent = active ? "Active route" : "Activate route";
-      button.setAttribute("aria-pressed", active ? "true" : "false");
+    card.setAttribute("aria-pressed", active ? "true" : "false");
+    const state = card.querySelector(".route-state");
+    if (state) {
+      state.textContent = active ? "Active route" : "Activate route";
     }
   });
 
@@ -375,7 +396,7 @@ function unmountWidget() {
 
 function mountWidget(mode) {
   if (!window.OmnistonWidget) {
-    elements.status.textContent = "Widget unavailable";
+    elements.status.textContent = "Unavailable";
     elements.fallback.classList.remove("hidden");
     return;
   }
@@ -397,27 +418,59 @@ function mountWidget(mode) {
     });
 
     mountedWidget.mount(elements.container);
-    elements.status.textContent = "Widget ready";
+    elements.status.textContent = "Ready";
     elements.fallback.classList.add("hidden");
   } catch (error) {
     console.error("Failed to mount widget", error);
-    elements.status.textContent = "Widget error";
+    elements.status.textContent = "Error";
     elements.fallback.classList.remove("hidden");
   }
 }
 
-function activateMode(mode) {
+function activateMode(mode, options = {}) {
+  const {
+    scrollToSwap = false,
+    updateHistory = true,
+    replaceHistory = false,
+  } = options;
+
+  if (!modeConfig[mode]) {
+    return;
+  }
+
+  if (mode === currentMode) {
+    if (scrollToSwap) {
+      scrollSwapPanelIntoView();
+    }
+    return;
+  }
+
   currentMode = mode;
-  syncLocation(mode);
+
+  if (updateHistory) {
+    syncLocation(mode, { replace: replaceHistory });
+  } else {
+    persistMode(mode);
+  }
+
   updateCopy(mode);
   resetReadiness(mode);
   mountWidget(mode);
+
+  if (scrollToSwap) {
+    scrollSwapPanelIntoView();
+  }
 }
 
 async function copyRouteLink() {
   try {
     await navigator.clipboard.writeText(shareUrl(currentMode));
-    elements.shareStatus.textContent = "Route link copied";
+    elements.copyRouteLink.textContent = "Link copied";
+    elements.shareStatus.textContent = "Current route link copied to clipboard";
+    window.setTimeout(() => {
+      elements.copyRouteLink.textContent = "Copy link";
+      elements.shareStatus.textContent = "";
+    }, 1400);
   } catch (error) {
     console.error("Clipboard copy failed", error);
     elements.shareStatus.textContent = "Clipboard unavailable";
@@ -425,8 +478,7 @@ async function copyRouteLink() {
 }
 
 elements.cards.forEach((card) => {
-  const button = card.querySelector(".mode-button");
-  button?.addEventListener("click", () => activateMode(card.dataset.mode));
+  card.addEventListener("click", () => activateMode(card.dataset.mode, { scrollToSwap: true }));
 });
 
 elements.quickModes.forEach((button) => {
@@ -455,16 +507,16 @@ elements.readinessList?.addEventListener("click", (event) => {
 elements.copyRouteLink?.addEventListener("click", copyRouteLink);
 elements.applyBuilderRoute?.addEventListener("click", () => {
   const recommendationMode = elements.applyBuilderRoute.dataset.mode || "ecosystem";
-  activateMode(recommendationMode);
-  elements.shareStatus.textContent = "Recommendation applied";
-  document.querySelector("#swap-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  activateMode(recommendationMode, { scrollToSwap: true });
+});
+
+window.addEventListener("popstate", () => {
+  const mode = readModeFromUrl() || resolveInitialMode();
+  activateMode(mode, { updateHistory: false });
 });
 
 window.addEventListener("load", () => {
   updateBuilderControls();
   renderBuilderRecommendation();
-  activateMode(resolveInitialMode());
-  window.requestAnimationFrame(() => {
-    elements.body.classList.add("is-ready");
-  });
+  activateMode(resolveInitialMode(), { replaceHistory: true });
 });
