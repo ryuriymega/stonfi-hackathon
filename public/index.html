@@ -14,59 +14,249 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260410b" />
   </head>
-  <body>
+  <body data-mode="ecosystem">
     <div class="backdrop backdrop-a"></div>
     <div class="backdrop backdrop-b"></div>
+    <div class="backdrop backdrop-c"></div>
     <div class="noise"></div>
 
     <header class="site-header">
       <div class="brand-lockup">
         <div class="brand-mark">TC</div>
-        <div>
-          <p class="eyebrow">Hackathon-ready TON mini product</p>
+        <div class="brand-copy">
+          <p class="eyebrow">TON first-move studio</p>
           <h1>TON Compass</h1>
         </div>
       </div>
-      <a class="ghost-link" href="#swap-panel">Open swap panel</a>
+
+      <div class="header-actions">
+        <p class="header-proof">Live on TON with the official STON.fi execution layer.</p>
+        <a class="ghost-link" href="#swap-panel">Open live panel</a>
+      </div>
     </header>
 
-    <main class="page-grid">
-      <section class="hero">
-        <p class="hero-chip">Built for the STON.fi track</p>
-        <h2>Your first TON DeFi move, minus the chaos.</h2>
-        <p class="hero-copy">
-          TON Compass is a guided first-swap page for people who want one clear starting point,
-          plain-English context, and a real STON.fi execution path instead of a wall of DeFi
-          controls.
-        </p>
+    <main class="app-shell">
+      <div class="editorial-stack">
+        <section class="hero-stage">
+          <div class="hero-copy">
+            <p class="hero-chip">Built for the STON.fi track</p>
+            <h2>Make a first TON DeFi move feel calm, legible, and worth repeating.</h2>
+            <p class="hero-text">
+              TON Compass turns the first swap into a guided route instead of a raw terminal. Pick
+              an intent, understand the trade, execute through STON.fi, then continue into the next
+              TON move with confidence.
+            </p>
 
-        <div class="hero-actions">
-          <a class="primary-link" href="#swap-panel">Start with STON.fi</a>
-          <a class="secondary-link" href="#project-notes">Why this works for the hackathon</a>
-        </div>
+            <div class="hero-actions">
+              <a class="primary-link" href="#swap-panel">Start the live swap</a>
+              <a class="secondary-link" href="#routes">Explore route presets</a>
+            </div>
 
-        <div class="stat-row">
-          <article class="stat-card">
-            <span class="stat-label">Use case</span>
-            <strong>First swap onboarding</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Integration</span>
-            <strong>STON.fi Omniston Widget</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Build style</span>
-            <strong>Fast live deployment</strong>
-          </article>
-        </div>
-      </section>
+            <div class="signal-strip">
+              <article>
+                <span class="signal-label">Live layer</span>
+                <strong>STON.fi Omniston Widget</strong>
+              </article>
+              <article>
+                <span class="signal-label">Feature</span>
+                <strong>Shareable guided routes</strong>
+              </article>
+              <article>
+                <span class="signal-label">Continuation</span>
+                <strong>Tonstakers-ready next step</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="orbital-stage">
+              <div class="orbital-ring ring-a"></div>
+              <div class="orbital-ring ring-b"></div>
+              <div class="orbital-ring ring-c"></div>
+
+              <div class="orbital-core">
+                <p class="core-label">Selected route</p>
+                <h3 id="route-short">TON → STON</h3>
+                <p id="route-stance">One obvious ecosystem first step for a brand-new TON user.</p>
+              </div>
+
+              <div class="orbit-tag orbit-tag-a">
+                <span>Wallet</span>
+                Connect once
+              </div>
+              <div class="orbit-tag orbit-tag-b">
+                <span>Execution</span>
+                Official STON.fi
+              </div>
+              <div class="orbit-tag orbit-tag-c" id="orbit-next-tag">
+                <span>Next move</span>
+                Tonstakers-ready
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="routes-section" id="routes">
+          <div class="section-heading">
+            <p class="eyebrow">Intent routes</p>
+            <h3>Choose a route, not a wall of controls.</h3>
+            <p class="section-copy">
+              Each route updates the live widget, the checklist, and the next-step handoff. The URL
+              updates too, so every guided path can be shared directly.
+            </p>
+          </div>
+
+          <div class="route-list">
+            <article class="route-option active" data-mode="ecosystem">
+              <div class="route-count">01</div>
+              <div class="route-body">
+                <p class="route-kicker">Ecosystem entry</p>
+                <h4>Meet TON through one obvious asset path.</h4>
+                <p>
+                  Preset TON → STON and frame it as a guided first move instead of a blank market
+                  search.
+                </p>
+              </div>
+              <div class="route-meta">
+                <span>Best for</span>
+                <strong>First swap</strong>
+                <button class="mode-button" type="button">Activate route</button>
+              </div>
+            </article>
+
+            <article class="route-option" data-mode="open">
+              <div class="route-count">02</div>
+              <div class="route-body">
+                <p class="route-kicker">Open market mode</p>
+                <h4>Keep the wrapper clean, let the market stay open.</h4>
+                <p>
+                  Remove the output preset and let the user browse TON assets while still keeping a
+                  calmer onboarding shell.
+                </p>
+              </div>
+              <div class="route-meta">
+                <span>Best for</span>
+                <strong>Self-directed users</strong>
+                <button class="mode-button" type="button">Activate route</button>
+              </div>
+            </article>
+
+            <article class="route-option" data-mode="learn">
+              <div class="route-count">03</div>
+              <div class="route-body">
+                <p class="route-kicker">Learn before swap</p>
+                <h4>Keep the trade live, but turn the wrapper into coaching.</h4>
+                <p>
+                  Use the same STON.fi execution flow while surfacing slippage, gas, and first-step
+                  guidance before the user taps confirm.
+                </p>
+              </div>
+              <div class="route-meta">
+                <span>Best for</span>
+                <strong>Beginners</strong>
+                <button class="mode-button" type="button">Activate route</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="journey-section" id="project-notes">
+          <div class="section-heading">
+            <p class="eyebrow">Post-swap layer</p>
+            <h3>Not just a swap page. A first TON journey.</h3>
+          </div>
+
+          <div class="journey-grid">
+            <div class="journey-timeline">
+              <article class="timeline-step-card">
+                <p class="timeline-step">01</p>
+                <h4>Pick intent</h4>
+                <p>
+                  Start with a route that matches how much confidence the user already has: guided,
+                  open, or learn-first.
+                </p>
+              </article>
+              <article class="timeline-step-card">
+                <p class="timeline-step">02</p>
+                <h4>Execute through STON.fi</h4>
+                <p>
+                  The transaction stays real. TON Compass narrows the decision surface, then hands
+                  execution to the official swap layer.
+                </p>
+              </article>
+              <article class="timeline-step-card">
+                <p class="timeline-step">03</p>
+                <h4>Continue with yield when ready</h4>
+                <p>
+                  After the first move, the app can hand the user into an official Tonstakers flow
+                  instead of leaving them at a dead end.
+                </p>
+              </article>
+            </div>
+
+            <aside class="yield-panel">
+              <p class="yield-tag">Tonstakers continuation</p>
+              <h4>Hold TON? Roll into staking when the user is ready.</h4>
+              <p class="yield-copy">
+                Tonstakers is TON liquid staking. Their official FAQ says staking starts from 1 TON,
+                but users should keep at least 2.2 TON in wallet because the contract needs roughly
+                1.2 TON reserved for fees.
+              </p>
+              <ul class="yield-list">
+                <li>Use the official app only: app.tonstakers.com</li>
+                <li>Keep tsTON in the wallet for future withdrawals</li>
+                <li>Present staking as an optional second move, not a forced path</li>
+              </ul>
+              <a
+                class="primary-link"
+                href="https://app.tonstakers.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open official Tonstakers app
+              </a>
+            </aside>
+          </div>
+        </section>
+
+        <section class="proof-section">
+          <div class="section-heading">
+            <p class="eyebrow">Hackathon proof</p>
+            <h3>Small enough to finish now, structured enough to keep shipping after demo day.</h3>
+          </div>
+
+          <div class="proof-grid">
+            <article>
+              <p class="proof-label">Real integration</p>
+              <p>
+                The core transaction is delegated to the official STON.fi widget rather than a fake
+                mock flow.
+              </p>
+            </article>
+            <article>
+              <p class="proof-label">Real product shape</p>
+              <p>
+                Route presets, shared links, and next-step guidance make the app feel like a usable
+                entry point instead of a one-screen embed.
+              </p>
+            </article>
+            <article>
+              <p class="proof-label">Real continuation</p>
+              <p>
+                The Tonstakers handoff shows a credible path toward a broader TON onboarding
+                product.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
 
       <aside class="swap-panel" id="swap-panel">
         <div class="panel-topline">
-          <span class="panel-tag">Live integration zone</span>
-          <span class="panel-status" id="widget-status">Loading widget...</span>
+          <span class="panel-tag">Live execution layer</span>
+          <span class="panel-status" id="widget-status" aria-live="polite">Loading widget...</span>
         </div>
 
         <div class="mode-copy">
@@ -78,18 +268,30 @@
           </p>
         </div>
 
-        <div class="prep-grid">
-          <article class="prep-card">
-            <p class="prep-label">Before you confirm</p>
-            <ul class="prep-list" id="prep-list"></ul>
+        <div class="console-metrics">
+          <article>
+            <span class="console-label">Best for</span>
+            <strong id="route-best-for">First asset discovery</strong>
           </article>
-          <article class="prep-card prep-card-accent">
-            <p class="prep-label">What happens next</p>
-            <p class="prep-outcome" id="mode-outcome">
-              TON Compass keeps the first move focused, then hands the real execution to STON.fi.
-            </p>
+          <article>
+            <span class="console-label">Watch</span>
+            <strong id="route-watch">Gas buffer and pair confirmation</strong>
+          </article>
+          <article>
+            <span class="console-label">After swap</span>
+            <strong id="route-after">Continue deeper into TON</strong>
           </article>
         </div>
+
+        <div class="share-row">
+          <button class="tertiary-button" id="copy-route-link" type="button">Copy route link</button>
+          <span class="share-status" id="share-status" aria-live="polite">Shareable preset ready</span>
+        </div>
+
+        <article class="prep-card">
+          <p class="prep-label">Before you confirm</p>
+          <ul class="prep-list" id="prep-list"></ul>
+        </article>
 
         <div class="widget-shell">
           <div id="omniston-widget-container"></div>
@@ -98,77 +300,32 @@
             public URL.
           </div>
         </div>
+
+        <article class="next-move-card">
+          <div class="next-move-topline">
+            <p class="prep-label">Next move</p>
+            <span class="next-badge" id="next-badge">Optional handoff</span>
+          </div>
+          <h4 id="next-title">Continue into Tonstakers when the user wants yield</h4>
+          <p id="next-copy">
+            Keep the first swap simple, then offer an official staking route for users who prefer a
+            TON-denominated next step.
+          </p>
+          <a
+            class="primary-link next-link"
+            id="next-link"
+            href="https://app.tonstakers.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open official Tonstakers app
+          </a>
+          <p class="fine-print" id="next-note">
+            Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least
+            2.2 TON in wallet to cover reserved fees.
+          </p>
+        </article>
       </aside>
-
-      <section class="cards-section">
-        <div class="section-heading">
-          <p class="eyebrow">Three simple entry points</p>
-          <h3>Enough product shape to be credible, still small enough to ship fast.</h3>
-        </div>
-
-        <div class="mode-grid">
-          <article class="idea-card active" data-mode="ecosystem">
-            <p class="card-index">01</p>
-            <h4>Ecosystem entry</h4>
-            <p>
-              Default the user into TON → STON and explain what they are about to do in normal
-              words.
-            </p>
-            <button class="mode-button" type="button">Use this preset</button>
-          </article>
-
-          <article class="idea-card" data-mode="open">
-            <p class="card-index">02</p>
-            <h4>Open market mode</h4>
-            <p>
-              Remove the preset pair and let the user choose any TON asset while keeping the same
-              clean wrapper.
-            </p>
-            <button class="mode-button" type="button">Switch to open mode</button>
-          </article>
-
-          <article class="idea-card" data-mode="learn">
-            <p class="card-index">03</p>
-            <h4>Learn before swap</h4>
-            <p>
-              Keep the widget live, but frame it as a beginner education page with gas, slippage,
-              and first-step notes.
-            </p>
-            <button class="mode-button" type="button">Show learning mode</button>
-          </article>
-        </div>
-      </section>
-
-      <section class="notes-section" id="project-notes">
-        <div class="section-heading">
-          <p class="eyebrow">Why this is the right hackathon move</p>
-          <h3>It looks like a product, not a demo script.</h3>
-        </div>
-
-        <div class="notes-grid">
-          <article class="note-card">
-            <h4>Clear problem</h4>
-            <p>
-              New TON users often do not need advanced DeFi. They need one trusted front door for a
-              first action.
-            </p>
-          </article>
-          <article class="note-card">
-            <h4>Real integration</h4>
-            <p>
-              The core interaction is delegated to the official STON.fi Omniston widget, so the app
-              is not pretending to be on-chain.
-            </p>
-          </article>
-          <article class="note-card">
-            <h4>Deployable today</h4>
-            <p>
-              No framework, no build step, no dependency install. Push the repo and run the Node
-              server on any box.
-            </p>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
@@ -176,6 +333,6 @@
     </footer>
 
     <script src="https://widget.ston.fi/v0/index.js"></script>
-    <script src="./app.js" type="module"></script>
+    <script src="./app.js?v=20260410b" type="module"></script>
   </body>
 </html>

@@ -1,22 +1,33 @@
 # TON Compass
 
-TON Compass is a fast-to-ship hackathon MVP for the STON.fi track: a guided first-swap app for new TON users.
+TON Compass is a guided first-move app for TON DeFi. It wraps the official STON.fi swap flow in a calmer onboarding shell, adds shareable route presets, and gives the user a credible next step instead of ending at the trade itself.
 
 ## Why this concept
 
-- It has a clear use case: help a first-time TON user take one confident DeFi action.
-- It qualifies for the STON.fi track through a real STON.fi integration.
-- It is small enough to finish quickly, but still looks like a product instead of a raw SDK demo.
+- It solves a real onboarding problem: first-time TON users need a trusted first action, not a raw DeFi terminal.
+- It qualifies for the STON.fi track through a live STON.fi Omniston Widget integration.
+- It already behaves like a product: route presets, persistent mode state, shared links, and a Tonstakers continuation path.
+- It is still small enough to ship fast and keep evolving on the same server.
+
+## Current product shape
+
+- Three guided swap routes:
+  - Ecosystem entry
+  - Open market mode
+  - Learn before swap
+- Shareable route URLs via `?mode=...`
+- Sticky live execution panel powered by the official STON.fi widget
+- Tonstakers-ready post-swap continuation for yield-oriented users
+- Dynamic `tonconnect-manifest.json` endpoint
 
 ## Stack
 
-- Lightweight static frontend
+- Lightweight static frontend in `public/`
 - Dependency-free Node server for local development
-- Dynamic `tonconnect-manifest.json` endpoint
+- Native Node-RED HTTP flow for public serving
 - Official STON.fi Omniston Widget via CDN
-- Static frontend in `public/`
 
-## Run
+## Run locally
 
 ```bash
 npm start
@@ -24,17 +35,16 @@ npm start
 
 Then open `http://localhost:3000`.
 
-## Demo
-
-Current public app URL:
+## Public demo
 
 `https://forlearningandcerts.sellsystems.agency:49184/ton-compass/index.html`
 
-## Suggested application pitch
+## GitHub
 
-TON Compass is a beginner-friendly front door to TON DeFi. Instead of exposing a new user to every possible token and action at once, it frames the first move with simple presets and plain-language guidance, while delegating the real swap execution to the official STON.fi widget. The result is a lightweight product that is fast to ship, easy to demo, and directly useful for onboarding.
+`https://github.com/ryuriymega/stonfi-hackathon`
 
-## Repo extras
+## Submission assets
 
-- `SUBMISSION.md` – ready-to-use pitch and demo draft
-- `ROADMAP.md` – immediate post-hackathon growth plan
+- `APPLICATION.md` – concise application answers for the form
+- `SUBMISSION.md` – full submission pitch and demo flow
+- `ROADMAP.md` – immediate post-hackathon expansion path
