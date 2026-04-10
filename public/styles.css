@@ -325,7 +325,7 @@ button:focus-visible {
 .sidebar,
 .main-stage {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   min-width: 0;
 }
 
@@ -362,7 +362,8 @@ button:focus-visible {
 
 .product-card {
   display: grid;
-  gap: 16px;
+  gap: 12px;
+  padding: 18px;
 }
 
 .hero-chip {
@@ -377,8 +378,8 @@ button:focus-visible {
 
 .product-card h2 {
   margin: 0;
-  font-size: clamp(1.28rem, 1.8vw, 1.62rem);
-  line-height: 1.02;
+  font-size: clamp(1.14rem, 1.4vw, 1.34rem);
+  line-height: 1.06;
   letter-spacing: -0.035em;
 }
 
@@ -387,7 +388,7 @@ button:focus-visible {
 .route-body p,
 .timeline-step-card p {
   color: var(--ink-soft);
-  line-height: 1.68;
+  line-height: 1.58;
 }
 
 .hero-text,
@@ -415,7 +416,7 @@ button:focus-visible {
   grid-template-columns: 72px minmax(0, 1fr);
   align-items: start;
   gap: 12px;
-  padding: 12px 0;
+  padding: 10px 0;
   border: 0;
   border-radius: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -433,8 +434,8 @@ button:focus-visible {
 
 .route-summary {
   display: grid;
-  gap: 14px;
-  padding: 18px;
+  gap: 12px;
+  padding: 16px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
     rgba(255, 255, 255, 0.02);
@@ -476,7 +477,7 @@ button:focus-visible {
 }
 
 .route-summary-copy strong {
-  font-size: 1.72rem;
+  font-size: 1.48rem;
   line-height: 1;
   letter-spacing: -0.04em;
 }
@@ -551,11 +552,11 @@ button:focus-visible {
 .journey-section,
 .subscription-section {
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .compact-heading h2 {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .section-heading h2 {
@@ -647,30 +648,30 @@ button:focus-visible {
 
 .builder-controls {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .builder-group {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .builder-options {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
 .builder-choice {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 999px;
-  min-height: 44px;
-  padding: 9px 12px;
+  min-height: 40px;
+  padding: 8px 11px;
   background: rgba(255, 255, 255, 0.04);
   color: var(--ink-dark);
   cursor: pointer;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
 }
 
 .builder-choice.selected {
@@ -681,8 +682,8 @@ button:focus-visible {
 
 .builder-output {
   display: grid;
-  gap: 10px;
-  padding: 16px;
+  gap: 8px;
+  padding: 14px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--line-dark);
@@ -708,19 +709,20 @@ button:focus-visible {
 
 .builder-output h3 {
   margin: 0;
-  font-size: 1.35rem;
-  line-height: 1.04;
+  font-size: 1.16rem;
+  line-height: 1.08;
 }
 
 .builder-apply {
   width: 100%;
-  margin-top: 2px;
+  margin-top: 0;
   cursor: pointer;
 }
 
 .subscription-section {
   position: relative;
-  gap: 14px;
+  gap: 12px;
+  padding: 18px;
   overflow: hidden;
 }
 
@@ -747,8 +749,8 @@ button:focus-visible {
 
 .subscription-copy h2 {
   margin: 0;
-  font-size: clamp(1.24rem, 1.8vw, 1.5rem);
-  line-height: 1.02;
+  font-size: clamp(1.12rem, 1.45vw, 1.3rem);
+  line-height: 1.08;
   letter-spacing: -0.035em;
 }
 
@@ -778,21 +780,22 @@ button:focus-visible {
 .pro-list {
   list-style: none;
   display: grid;
-  gap: 10px;
+  gap: 8px;
   margin: 0;
   padding: 0;
 }
 
 .pro-list li {
   position: relative;
-  min-height: 44px;
+  min-height: 40px;
   display: flex;
   align-items: center;
-  padding: 12px 14px 12px 42px;
+  padding: 10px 12px 10px 40px;
   border-radius: 14px;
   border: 1px solid var(--line-dark);
   background: rgba(255, 255, 255, 0.03);
   color: var(--ink-dark);
+  font-size: 0.92rem;
   font-weight: 600;
 }
 
@@ -822,7 +825,7 @@ button:focus-visible {
 
 .swap-panel {
   display: grid;
-  gap: 16px;
+  gap: 14px;
   padding: 24px;
   border-radius: var(--radius-xl);
   background:
@@ -884,15 +887,15 @@ button:focus-visible {
 .signal-strip {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.9fr));
-  gap: 10px;
+  gap: 8px;
 }
 
 .signal-card {
   display: grid;
-  gap: 6px;
+  gap: 4px;
   min-width: 0;
-  min-height: 74px;
-  padding: 12px 14px;
+  min-height: 60px;
+  padding: 10px 12px;
   border-radius: 16px;
   border: 1px solid var(--line-dark);
   background: rgba(255, 255, 255, 0.03);
@@ -908,7 +911,7 @@ button:focus-visible {
 
 .signal-label {
   color: var(--ink-dark-soft);
-  font-size: 0.7rem;
+  font-size: 0.64rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -916,7 +919,7 @@ button:focus-visible {
 
 .signal-card strong {
   color: var(--ink-dark);
-  font-size: 1rem;
+  font-size: 0.94rem;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -973,7 +976,7 @@ button:focus-visible {
 
 .readiness-card,
 .next-move-card {
-  padding: 20px;
+  padding: 18px;
   border-radius: var(--radius-lg);
 }
 
@@ -1043,20 +1046,21 @@ button:focus-visible {
 }
 
 .fine-print {
-  margin: 14px 0 0;
+  margin: 12px 0 0;
+  font-size: 0.88rem;
 }
 
 .journey-grid {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .timeline-step-card {
   display: grid;
   grid-template-columns: 52px minmax(0, 1fr);
-  gap: 14px;
+  gap: 12px;
   align-items: start;
-  padding: 16px;
+  padding: 14px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
 }
@@ -1073,7 +1077,7 @@ button:focus-visible {
 
 .timeline-step-card h3 {
   margin: 2px 0 8px;
-  font-size: 1.16rem;
+  font-size: 1.04rem;
 }
 
 .site-footer {
@@ -1145,6 +1149,10 @@ button:focus-visible {
   .builder-summary {
     grid-template-columns: 1fr;
   }
+
+  .builder-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -1196,7 +1204,7 @@ button:focus-visible {
   }
 
   .product-card h2 {
-    font-size: clamp(1.35rem, 8.4vw, 1.7rem);
+    font-size: clamp(1.18rem, 7.2vw, 1.44rem);
   }
 
   .hero-text {
@@ -1220,6 +1228,10 @@ button:focus-visible {
   }
 
   .signal-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .builder-options {
     grid-template-columns: 1fr;
   }
 
@@ -1248,7 +1260,7 @@ button:focus-visible {
 
   .signal-card {
     min-height: 0;
-    padding: 11px 12px;
+    padding: 10px 11px;
   }
 
   .route-summary-copy strong {
