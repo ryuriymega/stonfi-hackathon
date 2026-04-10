@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260410m" />
+    <link rel="stylesheet" href="./styles.css?v=20260410n" />
   </head>
   <body data-mode="ecosystem">
     <div class="page-glow glow-a"></div>
@@ -217,55 +217,10 @@
           </div>
         </section>
 
-        <section class="routes-section panel-light" id="routes">
+        <section class="builder-section panel-light" id="planner">
           <div class="section-heading compact-heading">
-            <p class="eyebrow">Intent routes</p>
-            <h2>Pick the route first.</h2>
-          </div>
-
-          <div class="route-list">
-            <button class="route-option active" data-mode="ecosystem" type="button">
-              <div class="route-body">
-                <p class="route-kicker">Ecosystem entry</p>
-                <p class="route-title">One obvious TON → STON first move.</p>
-                <p>Best for users who need a concrete ecosystem starting point.</p>
-              </div>
-              <div class="route-meta">
-                <strong>First swap</strong>
-                <span class="route-state">Active route</span>
-              </div>
-            </button>
-
-            <button class="route-option" data-mode="open" type="button">
-              <div class="route-body">
-                <p class="route-kicker">Open market mode</p>
-                <p class="route-title">Keep the wrapper calm and the market open.</p>
-                <p>For users who want a cleaner launch surface but still browse freely.</p>
-              </div>
-              <div class="route-meta">
-                <strong>Self-directed</strong>
-                <span class="route-state">Activate route</span>
-              </div>
-            </button>
-
-            <button class="route-option" data-mode="learn" type="button">
-              <div class="route-body">
-                <p class="route-kicker">Learn before swap</p>
-                <p class="route-title">Let explanation lead the interaction.</p>
-                <p>Same live swap, but framed for first-time TON users.</p>
-              </div>
-              <div class="route-meta">
-                <strong>Beginners</strong>
-                <span class="route-state">Activate route</span>
-              </div>
-            </button>
-          </div>
-        </section>
-
-        <section class="builder-section panel-dark" id="planner">
-          <div class="section-heading compact-heading">
-            <p class="eyebrow">Journey builder</p>
-            <h2>Generate the right first route.</h2>
+            <p class="eyebrow">Route planner</p>
+            <h2>Set the right first route.</h2>
           </div>
 
           <div class="builder-controls">
@@ -325,16 +280,16 @@
               First-time users should see explanation before they see optionality.
             </p>
 
-            <div class="builder-summary">
-              <article>
-                <span>Execution</span>
-                <strong id="builder-summary-execution">STON.fi guided swap</strong>
-              </article>
-              <article>
-                <span>After</span>
-                <strong id="builder-summary-after">Repeat with more confidence</strong>
-              </article>
-            </div>
+            <dl class="builder-summary">
+              <div>
+                <dt>Execution</dt>
+                <dd id="builder-summary-execution">STON.fi guided swap</dd>
+              </div>
+              <div>
+                <dt>After</dt>
+                <dd id="builder-summary-after">Repeat with more confidence</dd>
+              </div>
+            </dl>
 
             <button class="primary-link builder-apply" id="apply-builder-route" type="button">
               Apply recommendation
@@ -349,6 +304,6 @@
     </footer>
 
     <script src="https://widget.ston.fi/v0/index.js"></script>
-    <script src="./app.js?v=20260410m" type="module"></script>
+    <script src="./app.js?v=20260410n" type="module"></script>
   </body>
 </html>

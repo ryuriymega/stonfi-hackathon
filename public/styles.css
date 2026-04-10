@@ -496,16 +496,16 @@ button:focus-visible {
 .builder-summary,
 .console-metrics {
   display: grid;
-  gap: 10px;
+  gap: 0;
 }
 
-.builder-summary article,
+.builder-summary div,
 .console-metrics article {
   padding: 13px;
   border-radius: 14px;
 }
 
-.builder-summary article,
+.builder-summary div,
 .console-metrics article,
 .readiness-card,
 .next-move-card,
@@ -513,12 +513,12 @@ button:focus-visible {
   border: 1px solid var(--line-dark);
 }
 
-.builder-summary article,
+.builder-summary div,
 .console-metrics article {
   background: rgba(255, 255, 255, 0.03);
 }
 
-.builder-summary span,
+.builder-summary dt,
 .console-label {
   display: block;
   margin-bottom: 8px;
@@ -527,12 +527,12 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-.builder-summary span,
+.builder-summary dt,
 .console-label {
   color: rgba(246, 243, 237, 0.56);
 }
 
-.builder-summary strong,
+.builder-summary dd,
 .console-metrics strong,
 .builder-output h3,
 .swap-panel h2,
@@ -541,7 +541,11 @@ button:focus-visible {
   color: var(--ink-dark);
 }
 
-.routes-section,
+.builder-summary dd {
+  margin: 0;
+  font-weight: 700;
+}
+
 .builder-section,
 .journey-section {
   display: grid;
@@ -641,29 +645,30 @@ button:focus-visible {
 
 .builder-controls {
   display: grid;
-  gap: 16px;
+  gap: 12px;
 }
 
 .builder-group {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .builder-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .builder-choice {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 999px;
   min-height: 44px;
-  padding: 10px 14px;
+  padding: 9px 12px;
   background: rgba(255, 255, 255, 0.04);
   color: var(--ink-dark);
   cursor: pointer;
   font: inherit;
+  font-size: 0.9rem;
 }
 
 .builder-choice.selected {
@@ -674,7 +679,7 @@ button:focus-visible {
 
 .builder-output {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   padding: 16px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
@@ -694,7 +699,8 @@ button:focus-visible {
 
 .builder-output h3 {
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 1.35rem;
+  line-height: 1.04;
 }
 
 .builder-apply {
@@ -938,6 +944,14 @@ button:focus-visible {
   color: var(--ink-soft);
   font-size: 0.9rem;
   opacity: 0.78;
+}
+
+@media (min-width: 1181px) {
+  .sidebar {
+    position: sticky;
+    top: 14px;
+    align-self: start;
+  }
 }
 
 @media (max-width: 1180px) {
