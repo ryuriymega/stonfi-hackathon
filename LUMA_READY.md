@@ -6,11 +6,11 @@ TON Compass
 
 ## One-line description
 
-TON Compass is a guided onboarding layer for first-time TON swaps that uses the official STON.fi widget for execution and adds shareable route presets plus a Tonstakers-ready next step.
+TON Compass is a guided onboarding layer for first-time TON swaps that uses the official STON.fi widget for execution and adds shareable route presets, a Tonstakers-ready next step, and a subscription-ready Telegram continuation layer.
 
 ## Short project description
 
-TON Compass helps new TON users make their first DeFi move without getting dropped into a raw trading interface. Instead of showing every option at once, it frames the first action through guided routes, plain-language checklist copy, and a live STON.fi-powered swap panel. The current version also supports shareable preset URLs and a Tonstakers continuation layer, so the product feels like the beginning of a TON journey rather than a single embedded widget.
+TON Compass helps new TON users make their first DeFi move without getting dropped into a raw trading interface. Instead of showing every option at once, it frames the first action through guided routes, plain-language checklist copy, and a live STON.fi-powered swap panel. The current version also supports shareable preset URLs, a Tonstakers continuation layer, and a Compass Pro preview for Telegram-based follow-up alerts and saved routes, so the product feels like the beginning of a TON journey rather than a single embedded widget.
 
 ## Problem
 
@@ -18,7 +18,7 @@ For a new TON user, DeFi often feels like too much too early. Wallet connection,
 
 ## Solution
 
-TON Compass narrows the first interaction into guided routes. Each route updates the live STON.fi widget, the checklist, and the suggested next move. This keeps the transaction real while making the onboarding experience much calmer and easier to understand.
+TON Compass narrows the first interaction into guided routes. Each route updates the live STON.fi widget, the checklist, and the suggested next move. This keeps the transaction real while making the onboarding experience much calmer and easier to understand. On top of that, the product now previews a Compass Pro layer for Telegram continuity, saved routes, and future subscription-based alerts.
 
 ## Why this project should be selected
 
@@ -27,6 +27,7 @@ TON Compass narrows the first interaction into guided routes. Each route updates
 - It already has a live public demo and a public GitHub repository
 - It uses the official STON.fi widget for real execution, not a mocked flow
 - It is small enough to ship during the hackathon and strong enough to keep growing afterward
+- It already has a credible monetization path through STON.fi referral fees and a future Telegram subscription layer
 - We are ready to keep building during the official hackathon window and submit a full package on time
 
 ## Current functionality
@@ -37,6 +38,7 @@ TON Compass narrows the first interaction into guided routes. Each route updates
 - Shareable route URLs with persistent mode state
 - Live STON.fi swap execution
 - Tonstakers-ready post-swap continuation
+- Compass Pro preview layer for Telegram continuity and subscription-ready follow-up
 - Public demo already online
 
 ## Links
@@ -46,7 +48,7 @@ TON Compass narrows the first interaction into guided routes. Each route updates
 
 ## Super short fallback version
 
-TON Compass is a guided first-swap experience for TON that wraps the official STON.fi widget in a simpler onboarding layer with shareable presets and a Tonstakers-ready continuation path.
+TON Compass is a guided first-swap experience for TON that wraps the official STON.fi widget in a simpler onboarding layer with shareable presets, a Tonstakers-ready continuation path, and a subscription-ready Telegram follow-up layer.
 
 ## If the form asks about motivation
 

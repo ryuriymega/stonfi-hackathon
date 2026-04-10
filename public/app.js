@@ -28,10 +28,26 @@ const modeConfig = {
       title: "Continue into Tonstakers when the user wants yield",
       copy:
         "Once the first swap is no longer intimidating, the product can hand the user into an official TON staking route instead of ending at the transaction screen.",
+      followup: "After the first move, Compass Pro can keep this route alive in Telegram.",
       href: "https://app.tonstakers.com/",
       cta: "Open official Tonstakers app",
       note:
         "Tonstakers official FAQ says staking starts from 1 TON, but the wallet should hold at least 2.2 TON because about 1.2 TON is reserved for fees.",
+    },
+    proOffer: {
+      title: "Compass Pro for ecosystem starters",
+      copy:
+        "After the first TON to STON move, keep the route alive in Telegram instead of returning cold to the market later.",
+      bullets: [
+        "Route-change alerts",
+        "Saved post-swap watchlist",
+        "Next move suggestions",
+      ],
+      cta: "Send route to Telegram",
+      footnote:
+        "Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.",
+      telegramText:
+        "TON Compass ecosystem route saved. Keep the next TON move close in Telegram.",
     },
     widget: {
       defaultBidAsset: TON_ASSET,
@@ -62,10 +78,26 @@ const modeConfig = {
       title: "Expand from guided mode into the full STON.fi surface",
       copy:
         "When the guided route has done its job, keep the user inside the official STON.fi app for wider market discovery and more self-directed trading.",
+      followup: "Compass Pro can watch this route and pull the user back only when something changes.",
       href: "https://app.ston.fi/",
       cta: "Open official STON.fi app",
       note:
         "This route is for users who already understand the pair they want and just need a cleaner launch surface.",
+    },
+    proOffer: {
+      title: "Compass Pro for active explorers",
+      copy:
+        "Watch pairs, save routes, and come back only when the market actually gives the user a reason to act.",
+      bullets: [
+        "Saved route watchlists",
+        "Market movement alerts",
+        "Weekly wallet digest",
+      ],
+      cta: "Send route to Telegram",
+      footnote:
+        "Free route handoff now. Telegram subscriptions later unlock deeper watchlists and digests.",
+      telegramText:
+        "TON Compass open-market route saved. Bring this path into Telegram and revisit it when the market changes.",
     },
     widget: {
       defaultBidAsset: TON_ASSET,
@@ -95,10 +127,26 @@ const modeConfig = {
       title: "Turn the learning route into a TON staking next step",
       copy:
         "A user who understands fees, slippage, and wallet flow is more likely to trust a second move. Tonstakers gives that move a clear TON-denominated continuation.",
+      followup: "Compass Pro can keep the follow-up calm with safety-first reminders in Telegram.",
       href: "https://app.tonstakers.com/",
       cta: "Open official Tonstakers app",
       note:
         "Use only official Tonstakers links. Their FAQ lists app.tonstakers.com as the official app domain.",
+    },
+    proOffer: {
+      title: "Compass Pro for cautious first-timers",
+      copy:
+        "Stay calm after the first swap with small, useful follow-ups about timing, safety, and the next low-stress action.",
+      bullets: [
+        "Slippage and route watch alerts",
+        "Safer repeat-swap reminders",
+        "Staking follow-up guidance",
+      ],
+      cta: "Send route to Telegram",
+      footnote:
+        "Free at launch. Telegram subscriptions later add advanced alerts, digests, and richer follow-up guidance.",
+      telegramText:
+        "TON Compass learning route saved. Keep a calmer next move ready in Telegram.",
     },
     widget: {
       defaultBidAsset: TON_ASSET,
@@ -131,6 +179,7 @@ const elements = {
   nextBadge: document.querySelector("#next-badge"),
   nextTitle: document.querySelector("#next-title"),
   nextCopy: document.querySelector("#next-copy"),
+  nextFollowup: document.querySelector("#next-followup"),
   nextLink: document.querySelector("#next-link"),
   nextNote: document.querySelector("#next-note"),
   copyRouteLink: document.querySelector("#copy-route-link"),
@@ -140,6 +189,11 @@ const elements = {
   builderSummaryExecution: document.querySelector("#builder-summary-execution"),
   builderSummaryAfter: document.querySelector("#builder-summary-after"),
   applyBuilderRoute: document.querySelector("#apply-builder-route"),
+  proTitle: document.querySelector("#pro-title"),
+  proCopy: document.querySelector("#pro-copy"),
+  proList: document.querySelector("#pro-list"),
+  proCta: document.querySelector("#pro-cta"),
+  proFootnote: document.querySelector("#pro-footnote"),
 };
 
 let currentMode = null;
@@ -162,6 +216,14 @@ function prefersReducedMotion() {
 function shareUrl(mode) {
   const url = new URL(window.location.href);
   url.searchParams.set("mode", mode);
+  return url.toString();
+}
+
+function telegramPreviewUrl(mode) {
+  const config = modeConfig[mode];
+  const url = new URL("https://t.me/share/url");
+  url.searchParams.set("url", shareUrl(mode));
+  url.searchParams.set("text", config.proOffer.telegramText);
   return url.toString();
 }
 
@@ -236,6 +298,7 @@ function updateCopy(mode) {
   elements.nextBadge.textContent = config.nextMove.badge;
   elements.nextTitle.textContent = config.nextMove.title;
   elements.nextCopy.textContent = config.nextMove.copy;
+  elements.nextFollowup.textContent = config.nextMove.followup;
   elements.nextLink.href = config.nextMove.href;
   elements.nextLink.textContent = config.nextMove.cta;
   elements.nextNote.textContent = config.nextMove.note;
@@ -258,6 +321,27 @@ function updateCopy(mode) {
     button.classList.toggle("selected", active);
     button.setAttribute("aria-pressed", active ? "true" : "false");
   });
+
+  renderProOffer(mode);
+}
+
+function renderProOffer(mode) {
+  const config = modeConfig[mode].proOffer;
+
+  elements.proTitle.textContent = config.title;
+  elements.proCopy.textContent = config.copy;
+  elements.proFootnote.textContent = config.footnote;
+  elements.proCta.textContent = config.cta;
+  elements.proCta.href = telegramPreviewUrl(mode);
+  elements.proCta.setAttribute("aria-label", `${config.cta} for ${mode}`);
+
+  elements.proList.replaceChildren(
+    ...config.bullets.map((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      return li;
+    }),
+  );
 }
 
 function renderReadiness(mode) {
