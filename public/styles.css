@@ -20,7 +20,7 @@
   --radius-xl: 24px;
   --radius-lg: 18px;
   --radius-md: 14px;
-  --content-width: min(1360px, calc(100% - 40px));
+  --content-width: min(1520px, calc(100% - 56px));
 }
 
 body[data-mode="open"] {
@@ -109,7 +109,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 18px 0 14px;
+  padding: 16px 0 12px;
 }
 
 .brand-lockup,
@@ -315,7 +315,7 @@ button:focus-visible {
 .app-shell {
   display: grid;
   grid-template-areas: "sidebar main";
-  grid-template-columns: minmax(300px, 332px) minmax(0, 1fr);
+  grid-template-columns: minmax(288px, 320px) minmax(0, 1fr);
   gap: 18px;
   align-items: start;
   padding-bottom: 48px;
@@ -502,7 +502,7 @@ button:focus-visible {
 .builder-summary article,
 .console-metrics article {
   padding: 13px;
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
 .builder-summary article,
@@ -740,6 +740,22 @@ button:focus-visible {
 
 .console-metrics {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--line-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.console-metrics article {
+  border: 0;
+  border-right: 1px solid var(--line-dark);
+  border-radius: 0;
+  background: transparent;
+}
+
+.console-metrics article:last-child {
+  border-right: 0;
 }
 
 .mode-copy {
@@ -941,6 +957,7 @@ button:focus-visible {
   .site-header {
     flex-direction: column;
     align-items: stretch;
+    gap: 14px;
   }
 
   .header-summary {
@@ -968,7 +985,7 @@ button:focus-visible {
   }
 
   .site-header {
-    padding: 18px 0 14px;
+    padding: 14px 0 10px;
   }
 
   .brand-lockup {
@@ -995,7 +1012,7 @@ button:focus-visible {
   }
 
   .header-actions {
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
   }
 
@@ -1006,7 +1023,7 @@ button:focus-visible {
   .panel-light,
   .panel-dark,
   .swap-panel {
-    padding: 18px;
+    padding: 16px;
     border-radius: 24px;
   }
 
@@ -1044,13 +1061,13 @@ button:focus-visible {
   }
 
   .panel-topline h2 {
-    font-size: 1.74rem;
-    max-width: 11ch;
+    font-size: 1.64rem;
+    max-width: 10ch;
   }
 
   .mode-copy {
-    font-size: 0.92rem;
-    line-height: 1.56;
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 
   .route-summary-copy strong {
@@ -1078,6 +1095,19 @@ button:focus-visible {
     width: 44px;
     height: 44px;
     border-radius: 14px;
+  }
+
+  .console-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .console-metrics article {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  .console-metrics article:last-child {
+    border-bottom: 0;
   }
 }
 
