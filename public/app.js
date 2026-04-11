@@ -7,45 +7,42 @@ const modeConfig = {
   ecosystem: {
     title: "Start with TON → STON",
     description:
-      "Start with one concrete route, then adjust inside the live STON.fi swap.",
+      "Start with one obvious route, then adjust inside the live STON.fi swap.",
     routeShort: "TON → STON",
     stance: "One obvious ecosystem first step for a brand-new TON user.",
     briefBadge: "Ecosystem first move",
-    bestFor: "First asset discovery",
-    watch: "Gas buffer and pair confirmation",
-    afterSwap: "Optional Tonstakers yield path",
     orbitNext: "Tonstakers-ready",
-    readinessTitle: "Confirm fees, pair, and route before you connect the wallet.",
+    readinessTitle: "Check route, pair, and fees before wallet connect.",
     builderExecution: "STON.fi guided TON → STON route",
     builderAfter: "Continue into Tonstakers when the user is ready",
     checklist: [
-      "Hold a small TON balance for network fees.",
-      "Double-check the output token before confirming.",
-      "Use this route when you want one obvious ecosystem first step.",
+      "Keep a small TON buffer for fees.",
+      "Confirm the output token before you sign.",
+      "Use this when you want one obvious ecosystem first step.",
     ],
     nextMove: {
       badge: "Optional handoff",
-      title: "Continue into Tonstakers when the user wants yield",
+      title: "Hand off to Tonstakers when yield matters",
       copy:
-        "Once the first swap is no longer intimidating, the product can hand the user into an official TON staking route instead of ending at the transaction screen.",
-      followup: "After the first move, Compass Pro can keep this route alive in Telegram.",
+        "After the first swap, offer an official TON staking continuation instead of stopping at the confirmation screen.",
+      followup: "Compass Pro can keep that follow-up warm in Telegram.",
       href: "https://app.tonstakers.com/",
       cta: "Open official Tonstakers app",
       note:
-        "Tonstakers official FAQ says staking starts from 1 TON, but the wallet should hold at least 2.2 TON because about 1.2 TON is reserved for fees.",
+        "Tonstakers starts from 1 TON, but the wallet should keep about 2.2 TON available to cover reserved fees.",
     },
     proOffer: {
-      title: "Compass Pro for ecosystem starters",
+      title: "Keep this route warm in Telegram",
       copy:
-        "After the first TON to STON move, keep the route alive in Telegram instead of returning cold to the market later.",
+        "After TON to STON, save the route and come back only when the next move is actually useful.",
       bullets: [
-        "Route-change alerts",
-        "Saved post-swap watchlist",
-        "Next move suggestions",
+        "Route alerts",
+        "Saved return path",
+        "Next-step prompts",
       ],
       cta: "Send route to Telegram",
       footnote:
-        "Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.",
+        "Free at launch. Telegram subscriptions later unlock deeper alerts and weekly digests.",
       telegramText:
         "TON Compass ecosystem route saved. Keep the next TON move close in Telegram.",
     },
@@ -57,39 +54,36 @@ const modeConfig = {
   open: {
     title: "Open market mode",
     description:
-      "Keep the wrapper calm, remove the preset output, and let the user browse the full STON.fi surface.",
+      "Keep the wrapper calm, remove the preset output, and browse the full STON.fi surface.",
     routeShort: "TON → Any",
     stance: "A calmer wrapper for users who already know they want optionality.",
     briefBadge: "Market browsing route",
-    bestFor: "Self-directed exploration",
-    watch: "Pair selection and live pricing",
-    afterSwap: "Stay in market discovery",
     orbitNext: "Full market view",
-    readinessTitle: "Use this route only if the user already understands the pair they want.",
+    readinessTitle: "Use this only when the pair is already clear.",
     builderExecution: "Open STON.fi market entry route",
     builderAfter: "Stay inside STON.fi for broader asset discovery",
     checklist: [
-      "Treat this as a browse-first mode, not a rushed swap.",
-      "Compare the pair and amount carefully before continuing.",
-      "Use it when you already know which TON asset you want next.",
+      "Treat this as browse-first mode, not a rushed swap.",
+      "Check pair and amount carefully before signing.",
+      "Use it only when you already know the next asset.",
     ],
     nextMove: {
       badge: "Open continuation",
-      title: "Expand from guided mode into the full STON.fi surface",
+      title: "Stay inside STON.fi for broader market browsing",
       copy:
-        "When the guided route has done its job, keep the user inside the official STON.fi app for wider market discovery and more self-directed trading.",
+        "Once the guided route has done its job, keep the user inside the official STON.fi app for wider market discovery.",
       followup: "Compass Pro can watch this route and pull the user back only when something changes.",
       href: "https://app.ston.fi/",
       cta: "Open official STON.fi app",
       note:
-        "This route is for users who already understand the pair they want and just need a cleaner launch surface.",
+        "This route fits users who already understand the pair and only need a cleaner launch surface.",
     },
     proOffer: {
-      title: "Compass Pro for active explorers",
+      title: "Watch open routes in Telegram",
       copy:
-        "Watch pairs, save routes, and come back only when the market actually gives the user a reason to act.",
+        "Watch pairs, save routes, and return only when the market gives the user a real reason to act.",
       bullets: [
-        "Saved route watchlists",
+        "Saved route watchlist",
         "Market movement alerts",
         "Weekly wallet digest",
       ],
@@ -106,45 +100,42 @@ const modeConfig = {
   learn: {
     title: "Learn the route first",
     description:
-      "Use the same live STON.fi execution path, but add guidance before the first decision.",
+      "Keep the live STON.fi swap, but let explanation lead the first move.",
     routeShort: "Learn → Swap",
     stance: "Keep the trade live, but let explanation lead the interaction.",
     briefBadge: "Explanation-first route",
-    bestFor: "First-time TON users",
-    watch: "Price movement and slippage",
-    afterSwap: "Move into staking or repeat with confidence",
     orbitNext: "Guided continuation",
-    readinessTitle: "Finish the learning checks first so the live swap is not the first surprise.",
+    readinessTitle: "Finish the learning checks before wallet connect.",
     builderExecution: "STON.fi live swap with guided framing",
     builderAfter: "Repeat safely or continue into staking",
     checklist: [
-      "Read the prompt cards before touching the swap fields.",
-      "Expect price movement and slippage on live markets.",
-      "Start with a small test amount if this is your first on-chain action.",
+      "Read the prompts before touching the swap fields.",
+      "Expect live price movement and slippage.",
+      "Start with a small test amount if this is your first action.",
     ],
     nextMove: {
       badge: "Yield option",
-      title: "Turn the learning route into a TON staking next step",
+      title: "Turn the learning route into a staking follow-up",
       copy:
-        "A user who understands fees, slippage, and wallet flow is more likely to trust a second move. Tonstakers gives that move a clear TON-denominated continuation.",
-      followup: "Compass Pro can keep the follow-up calm with safety-first reminders in Telegram.",
+        "Once the user understands fees, slippage, and wallet flow, Tonstakers becomes a clear TON-denominated next step.",
+      followup: "Compass Pro can keep that follow-up calm with safety-first reminders in Telegram.",
       href: "https://app.tonstakers.com/",
       cta: "Open official Tonstakers app",
       note:
         "Use only official Tonstakers links. Their FAQ lists app.tonstakers.com as the official app domain.",
     },
     proOffer: {
-      title: "Compass Pro for cautious first-timers",
+      title: "Keep calm follow-ups in Telegram",
       copy:
-        "Stay calm after the first swap with small, useful follow-ups about timing, safety, and the next low-stress action.",
+        "Stay calm after the first swap with small follow-ups about timing, safety, and the next low-stress action.",
       bullets: [
-        "Slippage and route watch alerts",
-        "Safer repeat-swap reminders",
-        "Staking follow-up guidance",
+        "Route watch alerts",
+        "Safer repeat reminders",
+        "Staking follow-up prompts",
       ],
       cta: "Send route to Telegram",
       footnote:
-        "Free at launch. Telegram subscriptions later add advanced alerts, digests, and richer follow-up guidance.",
+        "Free at launch. Telegram subscriptions later add deeper alerts, digests, and richer follow-up guidance.",
       telegramText:
         "TON Compass learning route saved. Keep a calmer next move ready in Telegram.",
     },
@@ -167,9 +158,6 @@ const elements = {
   description: document.querySelector("#mode-description"),
   routeShort: document.querySelector("#route-short"),
   routeStance: document.querySelector("#route-stance"),
-  routeBestFor: document.querySelector("#route-best-for"),
-  routeWatch: document.querySelector("#route-watch"),
-  routeAfter: document.querySelector("#route-after"),
   orbitNextTag: document.querySelector("#orbit-next-tag"),
   briefBadge: document.querySelector("#brief-badge"),
   readinessTitle: document.querySelector("#readiness-title"),
@@ -296,9 +284,6 @@ function updateCopy(mode) {
   elements.description.textContent = config.description;
   elements.routeShort.textContent = config.routeShort;
   elements.routeStance.textContent = config.stance;
-  elements.routeBestFor.textContent = config.bestFor;
-  elements.routeWatch.textContent = config.watch;
-  elements.routeAfter.textContent = config.afterSwap;
   elements.briefBadge.textContent = config.briefBadge;
   elements.nextBadge.textContent = config.nextMove.badge;
   elements.nextTitle.textContent = config.nextMove.title;
@@ -444,7 +429,7 @@ function getBuilderRecommendation() {
   const mode = Object.entries(scores).sort((left, right) => right[1] - left[1])[0][0];
   const config = modeConfig[mode];
 
-  let reason = "This route balances clarity and real execution for the current user profile.";
+  let reason = "This route balances clarity and real execution for this profile.";
   if (mode === "learn") {
     reason = "This profile needs explanation before optionality, so the product should teach through the live flow.";
   }
@@ -452,11 +437,11 @@ function getBuilderRecommendation() {
     reason = "This profile benefits from one obvious ecosystem-first action instead of a blank market search.";
   }
   if (mode === "open") {
-    reason = "This profile already has enough confidence to browse the market, but still benefits from a calmer wrapper.";
+    reason = "This profile is ready to browse, but still benefits from a calmer wrapper.";
   }
 
   if (goal === "yield" && balance === "enough") {
-    reason = "The user wants yield later and already has enough TON, so start with a confident first route and hand off cleanly to Tonstakers after.";
+    reason = "The user wants yield later and already has enough TON, so start with a confident route and hand off cleanly to Tonstakers after.";
   }
 
   return {
