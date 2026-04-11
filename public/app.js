@@ -24,8 +24,8 @@ const modeConfig = {
       badge: "Optional handoff",
       title: "Hand off to Tonstakers when yield matters",
       copy:
-        "After the first swap, offer an official TON staking continuation instead of stopping at the confirmation screen.",
-      followup: "Compass Pro can keep that follow-up warm in Telegram.",
+        "After the first swap, offer an official TON staking continuation instead of ending at confirmation.",
+      followup: "Compass Pro can keep that handoff warm in Telegram.",
       href: "https://app.tonstakers.com/",
       cta: "Open official Tonstakers app",
       note:
@@ -34,7 +34,7 @@ const modeConfig = {
     proOffer: {
       title: "Keep this route warm in Telegram",
       copy:
-        "After TON to STON, save the route and come back only when the next move is actually useful.",
+        "Save the route and come back only when the next move is useful.",
       bullets: [
         "Route alerts",
         "Saved return path",
@@ -71,7 +71,7 @@ const modeConfig = {
       badge: "Open continuation",
       title: "Stay inside STON.fi for broader market browsing",
       copy:
-        "Once the guided route has done its job, keep the user inside the official STON.fi app for wider market discovery.",
+        "Once the guided route has done its job, keep the user inside the official STON.fi app for broader browsing.",
       followup: "Compass Pro can watch this route and pull the user back only when something changes.",
       href: "https://app.ston.fi/",
       cta: "Open official STON.fi app",
@@ -81,7 +81,7 @@ const modeConfig = {
     proOffer: {
       title: "Watch open routes in Telegram",
       copy:
-        "Watch pairs, save routes, and return only when the market gives the user a real reason to act.",
+        "Watch pairs, save routes, and return only when the market gives a real reason to act.",
       bullets: [
         "Saved route watchlist",
         "Market movement alerts",
@@ -117,7 +117,7 @@ const modeConfig = {
       badge: "Yield option",
       title: "Turn the learning route into a staking follow-up",
       copy:
-        "Once the user understands fees, slippage, and wallet flow, Tonstakers becomes a clear TON-denominated next step.",
+        "Once fees, slippage, and wallet flow are clear, Tonstakers becomes a clean TON-denominated next step.",
       followup: "Compass Pro can keep that follow-up calm with safety-first reminders in Telegram.",
       href: "https://app.tonstakers.com/",
       cta: "Open official Tonstakers app",
@@ -127,7 +127,7 @@ const modeConfig = {
     proOffer: {
       title: "Keep calm follow-ups in Telegram",
       copy:
-        "Stay calm after the first swap with small follow-ups about timing, safety, and the next low-stress action.",
+        "Stay calm after the first swap with small follow-ups about timing, safety, and the next low-stress move.",
       bullets: [
         "Route watch alerts",
         "Safer repeat reminders",
@@ -434,14 +434,14 @@ function getBuilderRecommendation() {
     reason = "This profile needs explanation before optionality, so the product should teach through the live flow.";
   }
   if (mode === "ecosystem") {
-    reason = "This profile benefits from one obvious ecosystem-first action instead of a blank market search.";
+    reason = "This profile benefits from one obvious ecosystem-first step instead of a blank market search.";
   }
   if (mode === "open") {
     reason = "This profile is ready to browse, but still benefits from a calmer wrapper.";
   }
 
   if (goal === "yield" && balance === "enough") {
-    reason = "The user wants yield later and already has enough TON, so start with a confident route and hand off cleanly to Tonstakers after.";
+    reason = "The user wants yield later and already has enough TON, so start with a confident route and hand off cleanly after.";
   }
 
   return {

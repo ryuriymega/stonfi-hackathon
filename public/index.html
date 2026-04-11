@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260411d" />
+    <link rel="stylesheet" href="./styles.css?v=20260411e" />
   </head>
   <body data-mode="ecosystem">
     <div class="page-glow glow-a"></div>
@@ -197,74 +197,79 @@
       </article>
 
       <aside class="support-rail">
-        <article class="next-move-card panel-dark">
-          <div class="next-move-topline">
-            <p class="prep-label">Next move</p>
-            <span class="next-badge" id="next-badge">Optional handoff</span>
-          </div>
+        <section class="after-route-card panel-dark">
+          <div class="after-route-head">
+            <div class="after-route-topline">
+              <p class="prep-label">After this route</p>
+              <span class="next-badge" id="next-badge">Optional handoff</span>
+            </div>
 
-          <h2 id="next-title">Continue into Tonstakers when the user wants yield</h2>
-          <p id="next-copy">
-            Keep the first swap simple, then offer an official staking route for users who prefer a
-            TON-denominated next step.
-          </p>
-
-          <p class="next-followup" id="next-followup">
-            After the first move, Compass Pro can keep watching for the next one.
-          </p>
-
-          <a
-            class="primary-link next-link"
-            id="next-link"
-            href="https://app.tonstakers.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open official Tonstakers app
-          </a>
-
-          <p class="fine-print" id="next-note">
-            Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least
-            2.2 TON in wallet to cover reserved fees.
-          </p>
-        </article>
-
-        <section class="subscription-section panel-dark" id="compass-pro">
-          <div class="subscription-topline">
-            <p class="prep-label">Compass Pro</p>
-            <span class="pro-state">Free now</span>
-          </div>
-
-          <div class="subscription-copy">
-            <h2 id="pro-title">Stay in the loop after the swap.</h2>
-            <p id="pro-copy">
-              Keep the route alive in Telegram with saved paths, next-move prompts, and a calmer
-              return into TON action.
+            <h2 id="next-title">Continue into Tonstakers when the user wants yield</h2>
+            <p id="next-copy">
+              Keep the first swap simple, then offer an official staking route for users who prefer a
+              TON-denominated next step.
             </p>
           </div>
 
-          <ul class="pro-list" id="pro-list">
-            <li>Telegram alerts</li>
-            <li>Saved route watchlists</li>
-            <li>Weekly wallet digest</li>
-          </ul>
+          <div class="after-route-grid">
+            <article class="after-route-block after-route-block-next">
+              <p class="after-block-label">Official continuation</p>
+              <p class="next-followup" id="next-followup">
+                After the first move, Compass Pro can keep watching for the next one.
+              </p>
 
-          <a
-            class="primary-link pro-cta"
-            id="pro-cta"
-            href="https://t.me/share/url"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Send route to Telegram
-          </a>
+              <a
+                class="primary-link next-link"
+                id="next-link"
+                href="https://app.tonstakers.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open official Tonstakers app
+              </a>
 
-          <p class="pro-footnote" id="pro-footnote">
-            Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.
-          </p>
-        </section>
+              <p class="fine-print" id="next-note">
+                Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least
+                2.2 TON in wallet to cover reserved fees.
+              </p>
+            </article>
 
-        <section class="product-card panel-light">
+            <article class="after-route-block after-route-block-pro" id="compass-pro">
+              <div class="subscription-topline">
+                <p class="after-block-label">Compass Pro</p>
+                <span class="pro-state">Free now</span>
+              </div>
+
+              <div class="subscription-copy">
+                <h3 id="pro-title">Stay in the loop after the swap.</h3>
+                <p id="pro-copy">
+                  Keep the route alive in Telegram with saved paths, next-move prompts, and a calmer
+                  return into TON action.
+                </p>
+              </div>
+
+              <ul class="pro-list" id="pro-list">
+                <li>Telegram alerts</li>
+                <li>Saved route watchlists</li>
+                <li>Weekly wallet digest</li>
+              </ul>
+
+              <a
+                class="primary-link pro-cta"
+                id="pro-cta"
+                href="https://t.me/share/url"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Send route to Telegram
+              </a>
+
+              <p class="pro-footnote" id="pro-footnote">
+                Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.
+              </p>
+            </article>
+          </div>
+
           <div class="route-summary route-summary-compact">
             <div class="route-summary-topline">
               <p class="hero-chip">Build note</p>
@@ -325,6 +330,6 @@
     </footer>
 
     <script src="https://widget.ston.fi/v0/index.js"></script>
-    <script src="./app.js?v=20260411d" type="module"></script>
+    <script src="./app.js?v=20260411e" type="module"></script>
   </body>
 </html>

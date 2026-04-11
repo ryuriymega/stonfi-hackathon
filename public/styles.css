@@ -138,13 +138,12 @@ body::before {
 }
 
 .brand-copy h1,
-.product-card h2,
-.subscription-section h2,
+.after-route-card h2,
+.after-route-block h3,
 .swap-panel h2,
 .section-heading h2,
 .builder-output h3,
 .readiness-card h2,
-.next-move-card h2,
 .timeline-step-card h3,
 .route-title,
 .route-summary-copy strong {
@@ -163,7 +162,7 @@ body::before {
 .timeline-step {
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
@@ -176,7 +175,7 @@ body::before {
 
 .brand-copy h1 {
   margin-top: 2px;
-  font-size: 1.18rem;
+  font-size: 1.28rem;
   letter-spacing: -0.03em;
 }
 
@@ -191,7 +190,7 @@ body::before {
   color: var(--ink-soft);
   line-height: 1.45;
   text-align: right;
-  font-size: 0.9rem;
+  font-size: 0.94rem;
 }
 
 a,
@@ -233,7 +232,7 @@ button {
 
 .ghost-link {
   color: var(--ink);
-  min-height: 44px;
+  min-height: 48px;
   padding: 10px 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(13, 18, 28, 0.82);
@@ -241,6 +240,7 @@ button {
 }
 
 .primary-link {
+  min-height: 48px;
   padding: 13px 20px;
   border: 0;
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
@@ -249,6 +249,7 @@ button {
 }
 
 .secondary-link {
+  min-height: 48px;
   padding: 13px 20px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.04);
@@ -268,6 +269,7 @@ button {
 }
 
 .tertiary-button {
+  min-height: 48px;
   padding: 10px 14px;
   background: rgba(255, 255, 255, 0.04);
   border-color: var(--line-dark);
@@ -275,7 +277,7 @@ button {
 }
 
 .route-switch {
-  min-height: 44px;
+  min-height: 48px;
   padding: 10px 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.08);
@@ -341,6 +343,7 @@ button:focus-visible {
 
 .support-rail {
   grid-area: support;
+  align-self: start;
 }
 
 .panel-light,
@@ -366,13 +369,6 @@ button:focus-visible {
   box-shadow: var(--shadow-strong);
 }
 
-.product-card {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
 .hero-chip {
   margin: 0;
   justify-self: start;
@@ -381,13 +377,6 @@ button:focus-visible {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
   color: var(--ink-soft);
-}
-
-.product-card h2 {
-  margin: 0;
-  font-size: clamp(1.14rem, 1.4vw, 1.34rem);
-  line-height: 1.06;
-  letter-spacing: -0.035em;
 }
 
 .hero-text,
@@ -404,33 +393,13 @@ button:focus-visible {
   margin: 0;
 }
 
-.product-points {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.product-points article,
 .route-summary {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: rgba(255, 255, 255, 0.03);
 }
 
-.product-points article {
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  align-items: start;
-  gap: 12px;
-  padding: 10px 0;
-  border: 0;
-  border-radius: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  background: transparent;
-}
-
-.product-points span,
+.after-block-label,
 .route-summary-foot span {
   color: var(--ink-soft);
   font-size: 0.78rem;
@@ -453,10 +422,22 @@ button:focus-visible {
   padding: 14px;
 }
 
+.after-route-card {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.after-route-head {
+  display: grid;
+  gap: 8px;
+}
+
+.after-route-topline,
 .route-summary-topline,
 .panel-topline,
 .readiness-topline,
-.next-move-topline,
 .control-strip {
   display: flex;
   align-items: flex-start;
@@ -469,7 +450,7 @@ button:focus-visible {
 .panel-status {
   display: inline-flex;
   align-items: center;
-  padding: 8px 11px;
+  padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
@@ -478,9 +459,23 @@ button:focus-visible {
 .brief-badge,
 .next-badge {
   color: var(--accent);
-  font-size: 0.77rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.after-route-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.after-route-block {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .route-summary-copy {
@@ -516,14 +511,13 @@ button:focus-visible {
 
 .builder-summary div,
 .console-metrics article {
-  padding: 13px;
+  padding: 12px;
   border-radius: 14px;
 }
 
 .builder-summary div,
 .console-metrics article,
 .readiness-card,
-.next-move-card,
 .timeline-step-card {
   border: 1px solid var(--line-dark);
 }
@@ -536,8 +530,8 @@ button:focus-visible {
 .builder-summary dt,
 .console-label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 0.7rem;
+  margin-bottom: 6px;
+  font-size: 0.74rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -551,7 +545,8 @@ button:focus-visible {
 .console-metrics strong,
 .builder-output h3,
 .swap-panel h2,
-.next-move-card h2,
+.after-route-card h2,
+.after-route-block h3,
 .route-summary-copy strong {
   color: var(--ink-dark);
 }
@@ -559,11 +554,11 @@ button:focus-visible {
 .builder-summary dd {
   margin: 0;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .builder-section,
-.journey-section,
-.subscription-section {
+.journey-section {
   display: grid;
   gap: 12px;
 }
@@ -615,7 +610,6 @@ button:focus-visible {
 }
 
 .route-option strong,
-.product-points strong,
 .route-summary-foot strong {
   color: var(--ink-dark);
 }
@@ -678,13 +672,13 @@ button:focus-visible {
 .builder-choice {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 999px;
-  min-height: 38px;
+  min-height: 48px;
   padding: 8px 10px;
   background: rgba(255, 255, 255, 0.04);
   color: var(--ink-dark);
   cursor: pointer;
   font: inherit;
-  font-size: 0.86rem;
+  font-size: 0.9rem;
   line-height: 1.18;
   text-align: center;
 }
@@ -706,7 +700,7 @@ button:focus-visible {
 
 .builder-output-label,
 .builder-reason,
-.next-move-card p,
+.after-route-card p,
 .fine-print {
   color: var(--ink-dark-soft);
 }
@@ -734,14 +728,7 @@ button:focus-visible {
   cursor: pointer;
 }
 
-.subscription-section {
-  position: relative;
-  gap: 10px;
-  padding: 16px;
-  overflow: hidden;
-}
-
-.subscription-section::before {
+.after-route-card::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
@@ -762,7 +749,7 @@ button:focus-visible {
   gap: 6px;
 }
 
-.subscription-copy h2 {
+.subscription-copy h3 {
   margin: 0;
   font-size: clamp(1.04rem, 1.3vw, 1.18rem);
   line-height: 1.08;
@@ -779,13 +766,13 @@ button:focus-visible {
 .pro-state {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
+  min-height: 34px;
   padding: 7px 11px;
   border-radius: 999px;
   background: rgba(132, 243, 182, 0.08);
   border: 1px solid rgba(132, 243, 182, 0.18);
   color: var(--accent);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -802,7 +789,7 @@ button:focus-visible {
 
 .pro-list li {
   position: relative;
-  min-height: 38px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   padding: 9px 12px 9px 38px;
@@ -810,7 +797,7 @@ button:focus-visible {
   border: 1px solid var(--line-dark);
   background: rgba(255, 255, 255, 0.03);
   color: var(--ink-dark);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
@@ -860,7 +847,7 @@ button:focus-visible {
 }
 
 .panel-status {
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   white-space: nowrap;
 }
 
@@ -887,7 +874,8 @@ button:focus-visible {
 .mode-copy {
   margin: 0;
   color: rgba(229, 236, 246, 0.76);
-  line-height: 1.56;
+  line-height: 1.5;
+  font-size: 0.95rem;
   max-width: 42rem;
 }
 
@@ -905,7 +893,7 @@ button:focus-visible {
   display: grid;
   gap: 4px;
   min-width: 0;
-  min-height: 60px;
+  min-height: 64px;
   padding: 10px 12px;
   border-radius: 16px;
   border: 1px solid var(--line-dark);
@@ -922,7 +910,7 @@ button:focus-visible {
 
 .signal-label {
   color: var(--ink-dark-soft);
-  font-size: 0.64rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -930,7 +918,7 @@ button:focus-visible {
 
 .signal-card strong {
   color: var(--ink-dark);
-  font-size: 0.94rem;
+  font-size: 0.98rem;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -943,7 +931,7 @@ button:focus-visible {
 }
 
 .copy-button {
-  min-height: 44px;
+  min-height: 48px;
   white-space: nowrap;
 }
 
@@ -985,8 +973,7 @@ button:focus-visible {
   display: none !important;
 }
 
-.readiness-card,
-.next-move-card {
+.readiness-card {
   padding: 16px;
   border-radius: var(--radius-lg);
 }
@@ -1139,6 +1126,13 @@ button:focus-visible {
   }
 }
 
+@media (min-width: 721px) and (max-width: 1180px) {
+  .after-route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
 @media (max-width: 860px) {
   .site-header {
     flex-direction: column;
@@ -1153,10 +1147,6 @@ button:focus-visible {
 
   .header-proof {
     text-align: left;
-  }
-
-  .product-card h2 {
-    font-size: clamp(1.45rem, 6vw, 1.9rem);
   }
 
   .console-metrics,
@@ -1224,12 +1214,12 @@ button:focus-visible {
     line-height: 1.45;
   }
 
-  .subscription-copy h2 {
-    font-size: 1.2rem;
+  .subscription-copy h3 {
+    font-size: 1.12rem;
   }
 
   .journey-section,
-  .product-card {
+  .route-summary {
     display: none;
   }
 
@@ -1381,7 +1371,7 @@ button:focus-visible {
   }
 
   .ghost-link {
-    min-height: 40px;
+    min-height: 48px;
     padding: 8px 12px;
   }
 
@@ -1411,8 +1401,8 @@ button:focus-visible {
   }
 
   .mode-copy {
-    font-size: 0.84rem;
-    line-height: 1.42;
+    font-size: 0.88rem;
+    line-height: 1.44;
   }
 
   .route-rail {
@@ -1420,7 +1410,7 @@ button:focus-visible {
   }
 
   .route-switch {
-    font-size: 0.84rem;
+    font-size: 0.86rem;
     padding: 10px 8px;
   }
 
@@ -1428,8 +1418,8 @@ button:focus-visible {
     font-size: 0.92rem;
   }
 
-  .subscription-copy h2 {
-    font-size: 1.26rem;
+  .subscription-copy h3 {
+    font-size: 1.12rem;
   }
 
   .pro-list li {
