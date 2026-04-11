@@ -315,26 +315,32 @@ button:focus-visible {
 
 .app-shell {
   display: grid;
-  grid-template-areas: "sidebar main";
+  grid-template-areas:
+    "planner swap"
+    "support readiness"
+    "support journey";
   grid-template-columns: minmax(320px, 360px) minmax(0, 1fr);
   gap: 16px;
   align-items: start;
   padding-bottom: 48px;
 }
 
-.sidebar,
-.main-stage {
+.builder-section,
+.support-rail,
+.swap-panel,
+.readiness-card,
+.journey-section {
   display: grid;
   gap: 10px;
   min-width: 0;
 }
 
-.sidebar {
-  grid-area: sidebar;
+.builder-section {
+  grid-area: planner;
 }
 
-.main-stage {
-  grid-area: main;
+.support-rail {
+  grid-area: support;
 }
 
 .panel-light,
@@ -827,12 +833,8 @@ button:focus-visible {
   width: 100%;
 }
 
-.main-stage {
-  display: grid;
-  gap: 18px;
-}
-
 .swap-panel {
+  grid-area: swap;
   display: grid;
   gap: 14px;
   padding: 24px;
@@ -989,6 +991,10 @@ button:focus-visible {
   border-radius: var(--radius-lg);
 }
 
+.readiness-card {
+  grid-area: readiness;
+}
+
 .readiness-score {
   color: var(--accent-strong);
   font-size: 1.08rem;
@@ -1064,6 +1070,10 @@ button:focus-visible {
   gap: 6px;
 }
 
+.journey-section {
+  grid-area: journey;
+}
+
 .timeline-step-card {
   display: grid;
   grid-template-columns: 52px minmax(0, 1fr);
@@ -1117,19 +1127,14 @@ button:focus-visible {
   }
 }
 
-@media (min-width: 1181px) {
-  .sidebar {
-    position: sticky;
-    top: 14px;
-    align-self: start;
-  }
-}
-
 @media (max-width: 1180px) {
   .app-shell {
     grid-template-areas:
-      "main"
-      "sidebar";
+      "swap"
+      "planner"
+      "readiness"
+      "support"
+      "journey";
     grid-template-columns: 1fr;
   }
 }

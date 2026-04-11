@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260411c" />
+    <link rel="stylesheet" href="./styles.css?v=20260411d" />
   </head>
   <body data-mode="ecosystem">
     <div class="page-glow glow-a"></div>
@@ -43,87 +43,160 @@
     </header>
 
     <main class="app-shell">
-      <aside class="sidebar">
-        <section class="builder-section panel-light" id="planner">
-          <div class="section-heading compact-heading">
-            <p class="eyebrow">Route planner</p>
-            <h2>Pick the first route.</h2>
+      <section class="builder-section panel-light" id="planner">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Route planner</p>
+          <h2>Pick the first route.</h2>
+        </div>
+
+        <div class="builder-controls">
+          <article class="builder-group">
+            <p class="builder-label">Goal</p>
+            <div class="builder-options">
+              <button class="builder-choice selected" data-group="goal" data-value="ecosystem" type="button">
+                Enter TON
+              </button>
+              <button class="builder-choice" data-group="goal" data-value="explore" type="button">
+                Explore
+              </button>
+              <button class="builder-choice" data-group="goal" data-value="learn" type="button">
+                Learn safely
+              </button>
+              <button class="builder-choice" data-group="goal" data-value="yield" type="button">
+                Yield later
+              </button>
+            </div>
+          </article>
+
+          <article class="builder-group">
+            <p class="builder-label">Experience</p>
+            <div class="builder-options">
+              <button class="builder-choice selected" data-group="experience" data-value="first" type="button">
+                First action
+              </button>
+              <button class="builder-choice" data-group="experience" data-value="some" type="button">
+                Some experience
+              </button>
+              <button class="builder-choice" data-group="experience" data-value="ready" type="button">
+                Ready to browse
+              </button>
+            </div>
+          </article>
+
+          <article class="builder-group">
+            <p class="builder-label">TON available</p>
+            <div class="builder-options">
+              <button class="builder-choice selected" data-group="balance" data-value="small" type="button">
+                Small test
+              </button>
+              <button class="builder-choice" data-group="balance" data-value="enough" type="button">
+                2.2+ TON
+              </button>
+              <button class="builder-choice" data-group="balance" data-value="browse" type="button">
+                Exploring
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <aside class="builder-output">
+          <p class="builder-output-label">Recommended</p>
+          <h3 id="builder-route-title">Learn before you swap</h3>
+          <p class="builder-reason" id="builder-reason">
+            First-time users should see explanation before they see optionality.
+          </p>
+
+          <dl class="builder-summary">
+            <div>
+              <dt>Execution</dt>
+              <dd id="builder-summary-execution">STON.fi guided swap</dd>
+            </div>
+            <div>
+              <dt>After</dt>
+              <dd id="builder-summary-after">Repeat with more confidence</dd>
+            </div>
+          </dl>
+
+          <button class="primary-link builder-apply" id="apply-builder-route" type="button">
+            Apply recommendation
+          </button>
+        </aside>
+      </section>
+
+      <article class="swap-panel" id="swap-panel">
+        <div class="panel-topline">
+          <div>
+            <p class="panel-tag">Live execution layer</p>
+            <h2 id="mode-title">Start inside the STON ecosystem</h2>
+          </div>
+          <span class="panel-status" id="widget-status" aria-live="polite">Loading...</span>
+        </div>
+
+        <p class="mode-copy" id="mode-description">
+          The widget starts with TON → STON so the first action feels concrete. Users can still
+          change either token directly in the swap UI.
+        </p>
+
+        <div class="control-strip">
+          <nav class="route-rail" aria-label="Route presets">
+            <button class="route-switch selected" data-mode-switch="ecosystem" type="button">Ecosystem</button>
+            <button class="route-switch" data-mode-switch="open" type="button">Open</button>
+            <button class="route-switch" data-mode-switch="learn" type="button">Learn</button>
+          </nav>
+
+          <button class="tertiary-button copy-button" id="copy-route-link" type="button">Copy link</button>
+        </div>
+        <span class="sr-only" id="share-status" aria-live="polite"></span>
+
+        <div class="signal-strip">
+          <button class="signal-card planner-signal" id="jump-planner" type="button">
+            <span class="signal-label">Planner recommends</span>
+            <strong id="inline-builder-title">Learn before you swap</strong>
+          </button>
+
+          <div class="signal-card route-signal">
+            <span class="signal-label">After this route</span>
+            <strong id="inline-after-tag">Tonstakers-ready</strong>
           </div>
 
-          <div class="builder-controls">
-            <article class="builder-group">
-              <p class="builder-label">Goal</p>
-              <div class="builder-options">
-                <button class="builder-choice selected" data-group="goal" data-value="ecosystem" type="button">
-                  Enter TON
-                </button>
-                <button class="builder-choice" data-group="goal" data-value="explore" type="button">
-                  Explore
-                </button>
-                <button class="builder-choice" data-group="goal" data-value="learn" type="button">
-                  Learn safely
-                </button>
-                <button class="builder-choice" data-group="goal" data-value="yield" type="button">
-                  Yield later
-                </button>
-              </div>
-            </article>
+          <a
+            class="signal-card pro-signal"
+            id="inline-pro-link"
+            href="https://t.me/share/url"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="signal-label">Compass Pro</span>
+            <strong id="inline-pro-tag">Save route in Telegram</strong>
+          </a>
+        </div>
 
-            <article class="builder-group">
-              <p class="builder-label">Experience</p>
-              <div class="builder-options">
-                <button class="builder-choice selected" data-group="experience" data-value="first" type="button">
-                  First action
-                </button>
-                <button class="builder-choice" data-group="experience" data-value="some" type="button">
-                  Some experience
-                </button>
-                <button class="builder-choice" data-group="experience" data-value="ready" type="button">
-                  Ready to browse
-                </button>
-              </div>
-            </article>
-
-            <article class="builder-group">
-              <p class="builder-label">TON available</p>
-              <div class="builder-options">
-                <button class="builder-choice selected" data-group="balance" data-value="small" type="button">
-                  Small test
-                </button>
-                <button class="builder-choice" data-group="balance" data-value="enough" type="button">
-                  2.2+ TON
-                </button>
-                <button class="builder-choice" data-group="balance" data-value="browse" type="button">
-                  Exploring
-                </button>
-              </div>
-            </article>
+        <div class="widget-shell">
+          <div id="omniston-widget-container"></div>
+          <div id="widget-fallback" class="widget-fallback hidden">
+            The STON.fi widget script did not load. Check network access or open the page from a
+            public URL.
           </div>
+        </div>
+      </article>
 
-          <aside class="builder-output">
-            <p class="builder-output-label">Recommended</p>
-            <h3 id="builder-route-title">Learn before you swap</h3>
-            <p class="builder-reason" id="builder-reason">
-              First-time users should see explanation before they see optionality.
-            </p>
+      <article class="readiness-card panel-light">
+        <div class="readiness-topline">
+          <div>
+            <p class="prep-label">Swap readiness</p>
+            <h2 id="readiness-title">Complete the preflight before opening the wallet.</h2>
+          </div>
+          <strong class="readiness-score" id="readiness-score">0%</strong>
+        </div>
 
-            <dl class="builder-summary">
-              <div>
-                <dt>Execution</dt>
-                <dd id="builder-summary-execution">STON.fi guided swap</dd>
-              </div>
-              <div>
-                <dt>After</dt>
-                <dd id="builder-summary-after">Repeat with more confidence</dd>
-              </div>
-            </dl>
+        <div class="readiness-bar" aria-hidden="true">
+          <span id="readiness-bar-fill"></span>
+        </div>
 
-            <button class="primary-link builder-apply" id="apply-builder-route" type="button">
-              Apply recommendation
-            </button>
-          </aside>
-        </section>
+        <div class="readiness-list" id="readiness-list"></div>
+      </article>
 
+      <aside class="support-rail">
         <article class="next-move-card panel-dark">
           <div class="next-move-topline">
             <p class="prep-label">Next move</p>
@@ -211,114 +284,39 @@
         </section>
       </aside>
 
-      <section class="main-stage">
-        <article class="swap-panel" id="swap-panel">
-          <div class="panel-topline">
-            <div>
-              <p class="panel-tag">Live execution layer</p>
-              <h2 id="mode-title">Start inside the STON ecosystem</h2>
-            </div>
-            <span class="panel-status" id="widget-status" aria-live="polite">Loading...</span>
-          </div>
-
-          <p class="mode-copy" id="mode-description">
-            The widget starts with TON → STON so the first action feels concrete. Users can still
-            change either token directly in the swap UI.
+      <section class="journey-section panel-light" id="project-notes">
+        <div class="section-heading">
+          <p class="eyebrow">Retention loop</p>
+          <h2>Keep one useful next move alive after the trade.</h2>
+          <p class="section-copy">
+            Free gets the swap done. The follow-up keeps the route warm without turning the page
+            into a dashboard.
           </p>
+        </div>
 
-          <div class="control-strip">
-            <nav class="route-rail" aria-label="Route presets">
-              <button class="route-switch selected" data-mode-switch="ecosystem" type="button">Ecosystem</button>
-              <button class="route-switch" data-mode-switch="open" type="button">Open</button>
-              <button class="route-switch" data-mode-switch="learn" type="button">Learn</button>
-            </nav>
-
-            <button class="tertiary-button copy-button" id="copy-route-link" type="button">Copy link</button>
-          </div>
-          <span class="sr-only" id="share-status" aria-live="polite"></span>
-
-          <div class="signal-strip">
-            <button class="signal-card planner-signal" id="jump-planner" type="button">
-              <span class="signal-label">Planner recommends</span>
-              <strong id="inline-builder-title">Learn before you swap</strong>
-            </button>
-
-            <div class="signal-card route-signal">
-              <span class="signal-label">After this route</span>
-              <strong id="inline-after-tag">Tonstakers-ready</strong>
-            </div>
-
-            <a
-              class="signal-card pro-signal"
-              id="inline-pro-link"
-              href="https://t.me/share/url"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span class="signal-label">Compass Pro</span>
-              <strong id="inline-pro-tag">Save route in Telegram</strong>
-            </a>
-          </div>
-
-          <div class="widget-shell">
-            <div id="omniston-widget-container"></div>
-            <div id="widget-fallback" class="widget-fallback hidden">
-              The STON.fi widget script did not load. Check network access or open the page from a
-              public URL.
-            </div>
-          </div>
-        </article>
-
-        <article class="readiness-card panel-light">
-          <div class="readiness-topline">
+        <div class="journey-grid">
+          <article class="timeline-step-card">
+            <p class="timeline-step">01</p>
             <div>
-              <p class="prep-label">Swap readiness</p>
-              <h2 id="readiness-title">Complete the preflight before opening the wallet.</h2>
+              <h3>Swap</h3>
+              <p>Start with one route instead of a blank market.</p>
             </div>
-            <strong class="readiness-score" id="readiness-score">0%</strong>
-          </div>
-
-          <div class="readiness-bar" aria-hidden="true">
-            <span id="readiness-bar-fill"></span>
-          </div>
-
-          <div class="readiness-list" id="readiness-list"></div>
-        </article>
-
-        <section class="journey-section panel-light" id="project-notes">
-          <div class="section-heading">
-            <p class="eyebrow">Retention loop</p>
-            <h2>Keep one useful next move alive after the trade.</h2>
-            <p class="section-copy">
-              Free gets the swap done. The follow-up keeps the route warm without turning the page
-              into a dashboard.
-            </p>
-          </div>
-
-          <div class="journey-grid">
-            <article class="timeline-step-card">
-              <p class="timeline-step">01</p>
-              <div>
-                <h3>Swap</h3>
-                <p>Start with one route instead of a blank market.</p>
-              </div>
-            </article>
-            <article class="timeline-step-card">
-              <p class="timeline-step">02</p>
-              <div>
-                <h3>Save route</h3>
-                <p>Keep the state watchable after confirmation.</p>
-              </div>
-            </article>
-            <article class="timeline-step-card">
-              <p class="timeline-step">03</p>
-              <div>
-                <h3>Return later</h3>
-                <p>Bring the user back only when the next action matters.</p>
-              </div>
-            </article>
-          </div>
-        </section>
+          </article>
+          <article class="timeline-step-card">
+            <p class="timeline-step">02</p>
+            <div>
+              <h3>Save route</h3>
+              <p>Keep the state watchable after confirmation.</p>
+            </div>
+          </article>
+          <article class="timeline-step-card">
+            <p class="timeline-step">03</p>
+            <div>
+              <h3>Return later</h3>
+              <p>Bring the user back only when the next action matters.</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
@@ -327,6 +325,6 @@
     </footer>
 
     <script src="https://widget.ston.fi/v0/index.js"></script>
-    <script src="./app.js?v=20260411c" type="module"></script>
+    <script src="./app.js?v=20260411d" type="module"></script>
   </body>
 </html>
