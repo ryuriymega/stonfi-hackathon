@@ -331,7 +331,8 @@ button:focus-visible {
 .support-rail,
 .swap-panel,
 .readiness-card,
-.journey-section {
+.journey-section,
+.intelligence-section {
   display: grid;
   gap: 10px;
   min-width: 0;
@@ -558,7 +559,8 @@ button:focus-visible {
 }
 
 .builder-section,
-.journey-section {
+.journey-section,
+.intelligence-section {
   display: grid;
   gap: 12px;
 }
@@ -1052,38 +1054,234 @@ button:focus-visible {
   font-size: 0.84rem;
 }
 
-.journey-grid {
-  display: grid;
-  gap: 6px;
-}
-
-.journey-section {
+.journey-section,
+.intelligence-section {
   grid-area: journey;
 }
 
-.timeline-step-card {
+.intelligence-section {
+  gap: 16px;
+}
+
+.intelligence-grid {
   display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.intel-card {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.03);
+  min-width: 0;
+}
+
+.intelligence-grid > .intel-card:first-child {
+  grid-column: 1 / -1;
+}
+
+.intel-head,
+.wallet-form,
+.planner-links {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.intel-head h3,
+.wallet-recommendation h3 {
+  margin: 6px 0 0;
+  font-size: 1.1rem;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.intel-kicker,
+.wallet-route-label,
+.field-label,
+.quote-stat dt,
+.constraint-label {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intel-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink-dark-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.intel-copy {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.quote-switches,
+.amount-presets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.amount-form,
+.wallet-form {
+  display: grid;
   gap: 10px;
-  align-items: start;
+}
+
+.field-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.amount-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink-dark);
+  font: inherit;
+}
+
+.amount-input::placeholder {
+  color: rgba(229, 236, 246, 0.42);
+}
+
+.quote-switch,
+.amount-pill {
+  min-height: 48px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink-dark);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.quote-switch.selected,
+.amount-pill:hover,
+.amount-pill:focus-visible {
+  background: rgba(132, 243, 182, 0.1);
+  border-color: rgba(132, 243, 182, 0.24);
+  color: var(--accent);
+}
+
+.quote-switch.selected {
+  box-shadow: inset 0 0 0 1px rgba(132, 243, 182, 0.12);
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quote-stat,
+.wallet-balance,
+.constraint-item {
+  display: grid;
+  gap: 6px;
   padding: 12px;
   border-radius: 14px;
+  border: 1px solid var(--line-dark);
   background: rgba(255, 255, 255, 0.03);
+  min-width: 0;
 }
 
-.timeline-step {
-  width: 44px;
-  height: 44px;
+.quote-stat dd,
+.wallet-balance strong,
+.constraint-item strong {
+  margin: 0;
+  color: var(--ink-dark);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.quote-note {
+  margin: 0;
+}
+
+.quote-submit,
+.wallet-submit,
+.wallet-apply,
+.planner-links .primary-link {
+  width: 100%;
+}
+
+.wallet-grid {
   display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  font-family: "Space Grotesk", sans-serif;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
 }
 
-.timeline-step-card h3 {
-  margin: 0 0 6px;
-  font-size: 0.98rem;
+.wallet-balance span {
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wallet-recommendation {
+  display: grid;
+  gap: 8px;
+}
+
+.wallet-route-copy {
+  color: var(--ink-dark-soft);
+}
+
+.wallet-apply:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.constraint-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.planner-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.planner-faq-link {
+  width: 100%;
 }
 
 .site-footer {
@@ -1096,21 +1294,13 @@ button:focus-visible {
   opacity: 0.78;
 }
 
-@media (min-width: 980px) {
-  .journey-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+@media (max-width: 1180px) {
+  .intelligence-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .timeline-step-card {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    align-content: start;
-    min-height: 100%;
-  }
-
-  .timeline-step {
-    width: 38px;
-    height: 38px;
+  .intelligence-grid > .intel-card:first-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1154,8 +1344,18 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .intelligence-grid {
+    grid-template-columns: 1fr;
+  }
+
   .builder-options {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 980px) {
+  .simulation-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -1218,13 +1418,13 @@ button:focus-visible {
     font-size: 1.12rem;
   }
 
-  .journey-section,
   .route-summary {
     display: none;
   }
 
   .control-strip,
-  .route-meta {
+  .route-meta,
+  .planner-links {
     flex-direction: column;
     align-items: stretch;
   }
@@ -1300,6 +1500,14 @@ button:focus-visible {
   .console-metrics article:last-child {
     border-bottom: 0;
   }
+
+  .quote-grid,
+  .wallet-grid,
+  .quote-switches,
+  .amount-presets,
+  .planner-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 360px) {
@@ -1347,6 +1555,16 @@ button:focus-visible {
 
   .builder-options {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intel-card {
+    padding: 14px;
+  }
+
+  .wallet-balance strong,
+  .quote-stat dd,
+  .constraint-item strong {
+    font-size: 0.96rem;
   }
 }
 

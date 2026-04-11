@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260411e" />
+    <link rel="stylesheet" href="./styles.css?v=20260411g" />
   </head>
   <body data-mode="ecosystem">
     <div class="page-glow glow-a"></div>
@@ -289,47 +289,218 @@
         </section>
       </aside>
 
-      <section class="journey-section panel-light" id="project-notes">
+      <section class="intelligence-section panel-light" id="project-notes">
         <div class="section-heading">
-          <p class="eyebrow">Retention loop</p>
-          <h2>Keep one useful next move alive after the trade.</h2>
-          <p class="section-copy">
-            Free gets the swap done. The follow-up keeps the route warm without turning the page
-            into a dashboard.
+          <p class="eyebrow">Decision Lab</p>
+          <h2>Check the route with live protocol data before the wallet prompt.</h2>
+          <p class="section-copy" id="lab-summary">
+            Loading official STON.fi market data for the route, continuation, and wallet-aware layer.
           </p>
         </div>
 
-        <div class="journey-grid">
-          <article class="timeline-step-card">
-            <p class="timeline-step">01</p>
-            <div>
-              <h3>Swap</h3>
-              <p>Start with one route instead of a blank market.</p>
+        <div class="intelligence-grid">
+          <article class="intel-card">
+            <div class="intel-head">
+              <div>
+                <p class="intel-kicker">Live simulation</p>
+                <h3>Quote the route first.</h3>
+              </div>
+              <span class="intel-badge" id="simulation-status">Loading</span>
             </div>
+
+            <p class="intel-copy" id="simulation-context">
+              Official STON.fi quote data for the route that TON Compass is currently pushing.
+            </p>
+
+            <div class="quote-switches" aria-label="Simulation pair">
+              <button class="quote-switch selected" id="simulate-ston" data-quote-pair="ston" type="button">
+                TON → STON
+              </button>
+              <button class="quote-switch" id="simulate-tston" data-quote-pair="tston" type="button">
+                TON → tsTON
+              </button>
+            </div>
+
+            <form class="amount-form" id="simulation-form">
+              <label class="field-stack" for="simulation-amount">
+                <span class="field-label">Offer amount in TON</span>
+                <input
+                  class="amount-input"
+                  id="simulation-amount"
+                  name="amount"
+                  type="number"
+                  min="0.1"
+                  step="0.1"
+                  value="1"
+                  inputmode="decimal"
+                />
+              </label>
+
+              <div class="amount-presets" aria-label="Quick amounts">
+                <button class="amount-pill" data-amount="0.5" type="button">0.5</button>
+                <button class="amount-pill" data-amount="1" type="button">1</button>
+                <button class="amount-pill" data-amount="5" type="button">5</button>
+              </div>
+
+              <button class="secondary-link quote-submit" type="submit">Refresh quote</button>
+            </form>
+
+            <dl class="quote-grid simulation-grid">
+              <div class="quote-stat">
+                <dt>Expected receive</dt>
+                <dd id="simulation-expected">-</dd>
+              </div>
+              <div class="quote-stat">
+                <dt>Min receive</dt>
+                <dd id="simulation-min">-</dd>
+              </div>
+              <div class="quote-stat">
+                <dt>Route fee</dt>
+                <dd id="simulation-fee">-</dd>
+              </div>
+              <div class="quote-stat">
+                <dt>Gas reserve</dt>
+                <dd id="simulation-gas">-</dd>
+              </div>
+            </dl>
+
+            <p class="fine-print quote-note" id="simulation-note">
+              Pulling a fresh official STON.fi quote.
+            </p>
           </article>
-          <article class="timeline-step-card">
-            <p class="timeline-step">02</p>
-            <div>
-              <h3>Save route</h3>
-              <p>Keep the state watchable after confirmation.</p>
+
+          <article class="intel-card">
+            <div class="intel-head">
+              <div>
+                <p class="intel-kicker">Wallet-aware route</p>
+                <h3>Turn a wallet into the next move.</h3>
+              </div>
+              <span class="intel-badge" id="wallet-status">Paste a wallet</span>
             </div>
+
+            <p class="intel-copy">
+              This reads the wallet through official STON.fi asset endpoints and turns it into one calm next action.
+            </p>
+
+            <form class="wallet-form" id="wallet-form">
+              <label class="field-stack" for="wallet-address">
+                <span class="field-label">TON wallet address</span>
+                <input
+                  class="amount-input wallet-input"
+                  id="wallet-address"
+                  name="address"
+                  type="text"
+                  autocomplete="off"
+                  spellcheck="false"
+                  placeholder="EQ..."
+                />
+              </label>
+
+              <button class="secondary-link wallet-submit" type="submit">Analyze wallet</button>
+            </form>
+
+            <div class="wallet-grid" id="wallet-balance-grid">
+              <article class="wallet-balance">
+                <span>TON</span>
+                <strong>-</strong>
+              </article>
+              <article class="wallet-balance">
+                <span>STON</span>
+                <strong>-</strong>
+              </article>
+              <article class="wallet-balance">
+                <span>tsTON</span>
+                <strong>-</strong>
+              </article>
+            </div>
+
+            <div class="wallet-recommendation">
+              <p class="wallet-route-label">Suggested route</p>
+              <h3 id="wallet-route-title">Waiting for a wallet</h3>
+              <p class="intel-copy wallet-route-copy" id="wallet-route-copy">
+                Once a wallet is pasted, TON Compass will turn balances into a route recommendation and a concrete continuation.
+              </p>
+            </div>
+
+            <button class="primary-link wallet-apply" id="wallet-apply-route" type="button" disabled>
+              Apply suggested route
+            </button>
           </article>
-          <article class="timeline-step-card">
-            <p class="timeline-step">03</p>
-            <div>
-              <h3>Return later</h3>
-              <p>Bring the user back only when the next action matters.</p>
+
+          <article class="intel-card">
+            <div class="intel-head">
+              <div>
+                <p class="intel-kicker">Tonstakers continuation</p>
+                <h3>Keep the staking handoff honest.</h3>
+              </div>
+              <span class="intel-badge" id="tonstakers-status">Loading</span>
             </div>
+
+            <p class="intel-copy">
+              Blend official Tonstakers constraints with live TON ↔ tsTON market signals before you hand the user off.
+            </p>
+
+            <dl class="quote-grid planner-grid">
+              <div class="quote-stat">
+                <dt>1 TON via STON.fi now</dt>
+                <dd id="tston-market-out">-</dd>
+              </div>
+              <div class="quote-stat">
+                <dt>TON needed for 1 tsTON</dt>
+                <dd id="tston-market-in">-</dd>
+              </div>
+              <div class="quote-stat">
+                <dt>tsTON market premium</dt>
+                <dd id="tston-premium">-</dd>
+              </div>
+              <div class="quote-stat">
+                <dt>STON per TON reference</dt>
+                <dd id="ston-per-ton">-</dd>
+              </div>
+            </dl>
+
+            <ul class="constraint-list">
+              <li class="constraint-item">
+                <span class="constraint-label">Official minimum</span>
+                <strong>1 TON to stake</strong>
+              </li>
+              <li class="constraint-item">
+                <span class="constraint-label">Wallet reserve</span>
+                <strong>Keep about 2.2 TON available</strong>
+              </li>
+              <li class="constraint-item">
+                <span class="constraint-label">Instant exit</span>
+                <strong>Depends on pool liquidity</strong>
+              </li>
+            </ul>
+
+            <div class="planner-links">
+              <a class="primary-link" href="https://app.tonstakers.com/" target="_blank" rel="noreferrer">
+                Open official Tonstakers app
+              </a>
+              <a
+                class="ghost-link planner-faq-link"
+                href="https://tonstakers.com/faq/en/article/withdrawing-ton-from-liquid-staking"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Tonstakers FAQ
+              </a>
+            </div>
+
+            <p class="fine-print" id="tonstakers-note">
+              Live market figures come from official STON.fi endpoints. Staking constraints come from official Tonstakers docs and FAQ.
+            </p>
           </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>TON Compass is a live STON.fi hackathon build with guided routes, readiness checks, and a Tonstakers-ready continuation.</p>
+      <p>TON Compass is a live STON.fi hackathon build with guided routes, official quote checks, wallet-aware next steps, and a Tonstakers-ready continuation.</p>
     </footer>
 
     <script src="https://widget.ston.fi/v0/index.js"></script>
-    <script src="./app.js?v=20260411e" type="module"></script>
+    <script src="./app.js?v=20260411g" type="module"></script>
   </body>
 </html>

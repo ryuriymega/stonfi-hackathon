@@ -6,7 +6,7 @@ TON Compass
 
 ## Short description
 
-TON Compass is a guided first-move app for TON DeFi. It wraps the official STON.fi swap flow in a calmer onboarding shell, adds shareable route presets, introduces a subscription-ready Telegram continuation layer, and gives the user a clear next step instead of ending at the transaction itself.
+TON Compass is a guided first-move app for TON DeFi. It wraps the official STON.fi swap flow in a calmer onboarding shell, adds a live quote and wallet-aware decision layer on top of official STON.fi endpoints, introduces a subscription-ready Telegram continuation layer, and gives the user a clear next step instead of ending at the transaction itself.
 
 ## Problem
 
@@ -14,7 +14,7 @@ Most DeFi products assume the user already understands wallets, gas, slippage, t
 
 ## Solution
 
-TON Compass narrows the first TON DeFi action into guided routes. Each route updates the live STON.fi widget, a preflight readiness layer, and the suggested next step. The current version supports a lightweight Journey Builder that recommends the right route for the user profile, three entry modes, persistent route selection, shareable route URLs, a Tonstakers continuation layer for users who want a yield-oriented follow-up action, and a subscription-ready Compass Pro layer that previews Telegram-based alerts and saved routes.
+TON Compass narrows the first TON DeFi action into guided routes. Each route updates the live STON.fi widget, a preflight readiness layer, and the suggested next step. The current version supports a lightweight Journey Builder that recommends the right route for the user profile, three entry modes, persistent route selection, shareable route URLs, a Decision Lab that pulls live STON.fi simulations plus wallet-aware hints from the public API, a Tonstakers continuation layer for users who want a yield-oriented follow-up action, and a subscription-ready Compass Pro layer that previews Telegram-based alerts and saved routes.
 
 ## Why this project should be accepted
 
@@ -33,8 +33,9 @@ TON Compass narrows the first TON DeFi action into guided routes. Each route upd
 - The app includes a Journey Builder that maps user intent to the recommended route
 - The live panel now includes an interactive readiness / preflight layer
 - The app now supports three guided swap routes
+- The product now includes a Decision Lab with live STON.fi route simulation and a wallet-aware recommendation layer
 - Route presets are shareable through URL state
-- The product includes a Tonstakers continuation path for the next TON action
+- The product includes a Tonstakers continuation planner with live TON ↔ tsTON market signals and official constraint hints
 - The product now previews a Compass Pro layer for Telegram continuity, saved routes, and subscription-ready follow-up alerts
 
 ## Public demo
@@ -49,7 +50,7 @@ TON Compass narrows the first TON DeFi action into guided routes. Each route upd
 
 ### One-sentence pitch
 
-TON Compass is a guided onboarding layer for first-time TON swaps that uses the official STON.fi widget for execution, adds shareable intent routes plus a Tonstakers-ready continuation path, and previews a subscription-ready Telegram follow-up layer.
+TON Compass is a guided onboarding layer for first-time TON swaps that uses the official STON.fi widget for execution, adds live STON.fi quote simulation, wallet-aware route hints, a Tonstakers-ready continuation path, and a subscription-ready Telegram follow-up layer.
 
 ### Why it stands out
 
@@ -78,5 +79,6 @@ TON Compass is a new build prepared for this hackathon. It is not an established
 2. Switch between the three route presets
 3. Show that the URL updates for shareable routes
 4. Open the live STON.fi widget and execute the swap path
-5. Show the Tonstakers continuation panel as the next TON action
-6. Show the Compass Pro layer as the retention and subscription-ready continuation after the first move
+5. Show the live Decision Lab with STON.fi route simulation and wallet-aware hints
+6. Show the Tonstakers continuation planner as the next TON action
+7. Show the Compass Pro layer as the retention and subscription-ready continuation after the first move

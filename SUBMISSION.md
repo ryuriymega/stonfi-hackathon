@@ -2,7 +2,7 @@
 
 ## One-line summary
 
-TON Compass is a guided onboarding layer for first-time TON swaps that uses the official STON.fi widget for execution, adds shareable route presets, and extends naturally into a Tonstakers-ready next step.
+TON Compass is a guided onboarding layer for first-time TON swaps that uses the official STON.fi widget for execution, adds live STON.fi route simulation and wallet-aware hints, and extends naturally into a Tonstakers-ready next step.
 
 ## Problem
 
@@ -10,7 +10,7 @@ For a new TON user, most DeFi interfaces feel like too much too early. The first
 
 ## Solution
 
-TON Compass reduces the first move into guided routes. Each route updates the live STON.fi widget, the plain-language checklist, and the suggested next action. Instead of rebuilding swap logic from scratch, the app delegates execution to the official STON.fi Omniston Widget while focusing product design on onboarding, confidence, and continuity.
+TON Compass reduces the first move into guided routes. Each route updates the live STON.fi widget, the plain-language checklist, and the suggested next action. Instead of rebuilding swap logic from scratch, the app delegates execution to the official STON.fi Omniston Widget, then uses official STON.fi public quote and wallet endpoints to add a Decision Lab around simulation, wallet-aware next-step logic, and Tonstakers continuation planning.
 
 ## Why it fits the STON.fi track
 
@@ -46,7 +46,7 @@ TON Compass reduces the first move into guided routes. Each route updates the li
 
 1. Add route analytics to see which onboarding intent converts best
 2. Personalize route defaults for stablecoins, ecosystem tokens, or education-first flows
-3. Add lightweight wallet-aware hints such as TON balance checks before opening the widget
+3. Expand the wallet-aware layer into richer route recommendations and saved wallet states
 4. Expand the post-swap layer into more TON-native actions beyond staking
 
 ## Demo script

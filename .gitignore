@@ -4,6 +4,7 @@ node_modules/
 npm-debug.log*
 .env
 .playwright-cli/
+output/playwright/
 submission/.venv/
 submission/rendered/
 submission/deck-montage.png
