@@ -14,23 +14,25 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260411g" />
+    <link rel="stylesheet" href="./styles.css?v=20260412a" />
   </head>
   <body data-mode="ecosystem">
-    <div class="page-glow glow-a"></div>
-    <div class="page-glow glow-b"></div>
+    <div class="page-orbit orbit-a" aria-hidden="true"></div>
+    <div class="page-orbit orbit-b" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="brand-lockup">
         <div class="brand-mark">TC</div>
         <div class="brand-copy">
-          <p class="eyebrow">TON first-move studio</p>
+          <p class="eyebrow">TON route console</p>
           <h1>TON Compass</h1>
         </div>
       </div>
 
       <div class="header-summary">
-        <p class="header-proof">Guided route logic on top of the official STON.fi execution layer.</p>
+        <p class="header-proof">
+          Guided STON.fi execution with live route checks, wallet-aware suggestions, and a Tonstakers-ready continuation.
+        </p>
         <div class="header-actions">
           <a class="ghost-link" href="https://github.com/ryuriymega/stonfi-hackathon" target="_blank" rel="noreferrer">
             GitHub
@@ -43,256 +45,264 @@
     </header>
 
     <main class="app-shell">
-      <section class="builder-section panel-light" id="planner">
-        <div class="section-heading compact-heading">
-          <p class="eyebrow">Route planner</p>
-          <h2>Pick the first route.</h2>
-        </div>
-
-        <div class="builder-controls">
-          <article class="builder-group">
-            <p class="builder-label">Goal</p>
-            <div class="builder-options">
-              <button class="builder-choice selected" data-group="goal" data-value="ecosystem" type="button">
-                Enter TON
-              </button>
-              <button class="builder-choice" data-group="goal" data-value="explore" type="button">
-                Explore
-              </button>
-              <button class="builder-choice" data-group="goal" data-value="learn" type="button">
-                Learn safely
-              </button>
-              <button class="builder-choice" data-group="goal" data-value="yield" type="button">
-                Yield later
-              </button>
-            </div>
-          </article>
-
-          <article class="builder-group">
-            <p class="builder-label">Experience</p>
-            <div class="builder-options">
-              <button class="builder-choice selected" data-group="experience" data-value="first" type="button">
-                First action
-              </button>
-              <button class="builder-choice" data-group="experience" data-value="some" type="button">
-                Some experience
-              </button>
-              <button class="builder-choice" data-group="experience" data-value="ready" type="button">
-                Ready to browse
-              </button>
-            </div>
-          </article>
-
-          <article class="builder-group">
-            <p class="builder-label">TON available</p>
-            <div class="builder-options">
-              <button class="builder-choice selected" data-group="balance" data-value="small" type="button">
-                Small test
-              </button>
-              <button class="builder-choice" data-group="balance" data-value="enough" type="button">
-                2.2+ TON
-              </button>
-              <button class="builder-choice" data-group="balance" data-value="browse" type="button">
-                Exploring
-              </button>
-            </div>
-          </article>
-        </div>
-
-        <aside class="builder-output">
-          <p class="builder-output-label">Recommended</p>
-          <h3 id="builder-route-title">Learn before you swap</h3>
-          <p class="builder-reason" id="builder-reason">
-            First-time users should see explanation before they see optionality.
-          </p>
-
-          <dl class="builder-summary">
-            <div>
-              <dt>Execution</dt>
-              <dd id="builder-summary-execution">STON.fi guided swap</dd>
-            </div>
-            <div>
-              <dt>After</dt>
-              <dd id="builder-summary-after">Repeat with more confidence</dd>
-            </div>
-          </dl>
-
-          <button class="primary-link builder-apply" id="apply-builder-route" type="button">
-            Apply recommendation
-          </button>
-        </aside>
-      </section>
-
-      <article class="swap-panel" id="swap-panel">
-        <div class="panel-topline">
-          <div>
-            <p class="panel-tag">Live execution layer</p>
-            <h2 id="mode-title">Start inside the STON ecosystem</h2>
-          </div>
-          <span class="panel-status" id="widget-status" aria-live="polite">Loading...</span>
-        </div>
-
-        <p class="mode-copy" id="mode-description">
-          The widget starts with TON → STON so the first action feels concrete. Users can still
-          change either token directly in the swap UI.
-        </p>
-
-        <div class="control-strip">
-          <nav class="route-rail" aria-label="Route presets">
-            <button class="route-switch selected" data-mode-switch="ecosystem" type="button">Ecosystem</button>
-            <button class="route-switch" data-mode-switch="open" type="button">Open</button>
-            <button class="route-switch" data-mode-switch="learn" type="button">Learn</button>
-          </nav>
-
-          <button class="tertiary-button copy-button" id="copy-route-link" type="button">Copy link</button>
-        </div>
-        <span class="sr-only" id="share-status" aria-live="polite"></span>
-
-        <div class="signal-strip">
-          <button class="signal-card planner-signal" id="jump-planner" type="button">
-            <span class="signal-label">Planner recommends</span>
-            <strong id="inline-builder-title">Learn before you swap</strong>
-          </button>
-
-          <div class="signal-card route-signal">
-            <span class="signal-label">After this route</span>
-            <strong id="inline-after-tag">Tonstakers-ready</strong>
-          </div>
-
-          <a
-            class="signal-card pro-signal"
-            id="inline-pro-link"
-            href="https://t.me/share/url"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="signal-label">Compass Pro</span>
-            <strong id="inline-pro-tag">Save route in Telegram</strong>
-          </a>
-        </div>
-
-        <div class="widget-shell">
-          <div id="omniston-widget-container"></div>
-          <div id="widget-fallback" class="widget-fallback hidden">
-            The STON.fi widget script did not load. Check network access or open the page from a
-            public URL.
-          </div>
-        </div>
-      </article>
-
-      <article class="readiness-card panel-light">
-        <div class="readiness-topline">
-          <div>
-            <p class="prep-label">Swap readiness</p>
-            <h2 id="readiness-title">Complete the preflight before opening the wallet.</h2>
-          </div>
-          <strong class="readiness-score" id="readiness-score">0%</strong>
-        </div>
-
-        <div class="readiness-bar" aria-hidden="true">
-          <span id="readiness-bar-fill"></span>
-        </div>
-
-        <div class="readiness-list" id="readiness-list"></div>
-      </article>
-
-      <aside class="support-rail">
-        <section class="after-route-card panel-dark">
-          <div class="after-route-head">
-            <div class="after-route-topline">
-              <p class="prep-label">After this route</p>
-              <span class="next-badge" id="next-badge">Optional handoff</span>
-            </div>
-
-            <h2 id="next-title">Continue into Tonstakers when the user wants yield</h2>
-            <p id="next-copy">
-              Keep the first swap simple, then offer an official staking route for users who prefer a
-              TON-denominated next step.
-            </p>
-          </div>
-
-          <div class="after-route-grid">
-            <article class="after-route-block after-route-block-next">
-              <p class="after-block-label">Official continuation</p>
-              <p class="next-followup" id="next-followup">
-                After the first move, Compass Pro can keep watching for the next one.
-              </p>
-
-              <a
-                class="primary-link next-link"
-                id="next-link"
-                href="https://app.tonstakers.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open official Tonstakers app
-              </a>
-
-              <p class="fine-print" id="next-note">
-                Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least
-                2.2 TON in wallet to cover reserved fees.
-              </p>
-            </article>
-
-            <article class="after-route-block after-route-block-pro" id="compass-pro">
-              <div class="subscription-topline">
-                <p class="after-block-label">Compass Pro</p>
-                <span class="pro-state">Free now</span>
+      <section class="workspace">
+        <article class="swap-panel" id="swap-panel">
+          <div class="stage-grid">
+            <div class="stage-intro">
+              <div class="panel-topline">
+                <div class="stage-title-group">
+                  <p class="panel-tag">Live execution layer</p>
+                  <h2 id="mode-title">Start inside the STON ecosystem</h2>
+                </div>
+                <span class="panel-status" id="widget-status" aria-live="polite">Loading...</span>
               </div>
 
-              <div class="subscription-copy">
-                <h3 id="pro-title">Stay in the loop after the swap.</h3>
-                <p id="pro-copy">
-                  Keep the route alive in Telegram with saved paths, next-move prompts, and a calmer
-                  return into TON action.
+              <p class="mode-copy" id="mode-description">
+                The widget starts with TON → STON so the first action feels concrete. Users can still change either token directly in the swap UI.
+              </p>
+
+              <div class="control-strip">
+                <nav class="route-rail" aria-label="Route presets">
+                  <button class="route-switch selected" data-mode-switch="ecosystem" type="button">Ecosystem</button>
+                  <button class="route-switch" data-mode-switch="open" type="button">Open</button>
+                  <button class="route-switch" data-mode-switch="learn" type="button">Learn</button>
+                </nav>
+
+                <button class="tertiary-button copy-button" id="copy-route-link" type="button">Copy link</button>
+              </div>
+              <span class="sr-only" id="share-status" aria-live="polite"></span>
+            </div>
+
+            <section class="builder-section" id="planner">
+              <div class="section-heading compact-heading">
+                <p class="eyebrow">Route planner</p>
+                <h2>Choose the first move.</h2>
+              </div>
+
+              <div class="builder-controls">
+                <article class="builder-group">
+                  <p class="builder-label">Goal</p>
+                  <div class="builder-options">
+                    <button class="builder-choice selected" data-group="goal" data-value="ecosystem" type="button">
+                      Enter TON
+                    </button>
+                    <button class="builder-choice" data-group="goal" data-value="explore" type="button">
+                      Explore
+                    </button>
+                    <button class="builder-choice" data-group="goal" data-value="learn" type="button">
+                      Learn safely
+                    </button>
+                    <button class="builder-choice" data-group="goal" data-value="yield" type="button">
+                      Yield later
+                    </button>
+                  </div>
+                </article>
+
+                <article class="builder-group">
+                  <p class="builder-label">Experience</p>
+                  <div class="builder-options">
+                    <button class="builder-choice selected" data-group="experience" data-value="first" type="button">
+                      First action
+                    </button>
+                    <button class="builder-choice" data-group="experience" data-value="some" type="button">
+                      Some experience
+                    </button>
+                    <button class="builder-choice" data-group="experience" data-value="ready" type="button">
+                      Ready to browse
+                    </button>
+                  </div>
+                </article>
+
+                <article class="builder-group">
+                  <p class="builder-label">TON available</p>
+                  <div class="builder-options">
+                    <button class="builder-choice selected" data-group="balance" data-value="small" type="button">
+                      Small test
+                    </button>
+                    <button class="builder-choice" data-group="balance" data-value="enough" type="button">
+                      2.2+ TON
+                    </button>
+                    <button class="builder-choice" data-group="balance" data-value="browse" type="button">
+                      Exploring
+                    </button>
+                  </div>
+                </article>
+              </div>
+
+              <aside class="builder-output">
+                <div class="builder-output-head">
+                  <p class="builder-output-label">Recommended route</p>
+                  <span class="builder-output-state">Live logic</span>
+                </div>
+                <h3 id="builder-route-title">Learn before you swap</h3>
+                <p class="builder-reason" id="builder-reason">
+                  First-time users should see explanation before they see optionality.
                 </p>
+
+                <dl class="builder-summary">
+                  <div>
+                    <dt>Execution</dt>
+                    <dd id="builder-summary-execution">STON.fi guided swap</dd>
+                  </div>
+                  <div>
+                    <dt>After</dt>
+                    <dd id="builder-summary-after">Repeat with more confidence</dd>
+                  </div>
+                </dl>
+
+                <button class="primary-link builder-apply" id="apply-builder-route" type="button">
+                  Apply recommendation
+                </button>
+              </aside>
+            </section>
+
+            <div class="stage-execution">
+              <div class="widget-shell">
+                <div id="omniston-widget-container"></div>
+                <div id="widget-fallback" class="widget-fallback hidden">
+                  The STON.fi widget script did not load. Check network access or open the page from a public URL.
+                </div>
+              </div>
+            </div>
+
+            <div class="signal-strip">
+              <button class="signal-card planner-signal" id="jump-planner" type="button">
+                <span class="signal-label">Planner recommends</span>
+                <strong id="inline-builder-title">Learn before you swap</strong>
+              </button>
+
+              <div class="signal-card route-signal">
+                <span class="signal-label">After this route</span>
+                <strong id="inline-after-tag">Tonstakers-ready</strong>
               </div>
 
-              <ul class="pro-list" id="pro-list">
-                <li>Telegram alerts</li>
-                <li>Saved route watchlists</li>
-                <li>Weekly wallet digest</li>
-              </ul>
-
               <a
-                class="primary-link pro-cta"
-                id="pro-cta"
+                class="signal-card pro-signal"
+                id="inline-pro-link"
                 href="https://t.me/share/url"
                 target="_blank"
                 rel="noreferrer"
               >
-                Send route to Telegram
+                <span class="signal-label">Compass Pro</span>
+                <strong id="inline-pro-tag">Save route in Telegram</strong>
               </a>
+            </div>
+          </div>
+        </article>
 
-              <p class="pro-footnote" id="pro-footnote">
-                Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.
+        <div class="command-rail">
+          <article class="readiness-card rail-section">
+            <div class="readiness-topline">
+              <div>
+                <p class="prep-label">Swap readiness</p>
+                <h2 id="readiness-title">Complete the preflight before opening the wallet.</h2>
+              </div>
+              <strong class="readiness-score" id="readiness-score">0%</strong>
+            </div>
+
+            <div class="readiness-bar" aria-hidden="true">
+              <span id="readiness-bar-fill"></span>
+            </div>
+
+            <div class="readiness-list" id="readiness-list"></div>
+          </article>
+
+          <section class="after-route-card rail-section">
+            <div class="after-route-head">
+              <div class="after-route-topline">
+                <p class="prep-label">After this route</p>
+                <span class="next-badge" id="next-badge">Optional handoff</span>
+              </div>
+
+              <h2 id="next-title">Continue into Tonstakers when the user wants yield</h2>
+              <p id="next-copy">
+                Keep the first swap simple, then offer an official staking route for users who prefer a TON-denominated next step.
               </p>
-            </article>
+            </div>
+
+            <div class="after-route-grid">
+              <article class="after-route-block after-route-block-next">
+                <p class="after-block-label">Official continuation</p>
+                <p class="next-followup" id="next-followup">
+                  After the first move, Compass Pro can keep watching for the next one.
+                </p>
+
+                <a
+                  class="primary-link next-link"
+                  id="next-link"
+                  href="https://app.tonstakers.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open official Tonstakers app
+                </a>
+
+                <p class="fine-print" id="next-note">
+                  Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least 2.2 TON in wallet to cover reserved fees.
+                </p>
+              </article>
+
+              <article class="after-route-block after-route-block-pro" id="compass-pro">
+                <div class="subscription-topline">
+                  <p class="after-block-label">Compass Pro</p>
+                  <span class="pro-state">Free now</span>
+                </div>
+
+                <div class="subscription-copy">
+                  <h3 id="pro-title">Stay in the loop after the swap.</h3>
+                  <p id="pro-copy">
+                    Keep the route alive in Telegram with saved paths, next-move prompts, and a calmer return into TON action.
+                  </p>
+                </div>
+
+                <ul class="pro-list" id="pro-list">
+                  <li>Telegram alerts</li>
+                  <li>Saved route watchlists</li>
+                  <li>Weekly wallet digest</li>
+                </ul>
+
+                <a
+                  class="primary-link pro-cta"
+                  id="pro-cta"
+                  href="https://t.me/share/url"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Send route to Telegram
+                </a>
+
+                <p class="pro-footnote" id="pro-footnote">
+                  Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.
+                </p>
+              </article>
+            </div>
+
+            <div class="route-summary route-summary-compact">
+              <div class="route-summary-topline">
+                <p class="hero-chip">Route note</p>
+                <span class="brief-badge" id="brief-badge">Guided continuation</span>
+              </div>
+
+              <div class="route-summary-copy">
+                <strong id="route-short">TON → STON</strong>
+                <p id="route-stance">One obvious ecosystem first step for a brand-new TON user.</p>
+              </div>
+
+              <div class="route-summary-foot">
+                <span>After</span>
+                <strong id="orbit-next-tag">Tonstakers-ready</strong>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="intelligence-section" id="project-notes">
+        <div class="section-heading intelligence-heading">
+          <div>
+            <p class="eyebrow">Decision Lab</p>
+            <h2>Check the route with live protocol data before the wallet prompt.</h2>
           </div>
-
-          <div class="route-summary route-summary-compact">
-            <div class="route-summary-topline">
-              <p class="hero-chip">Build note</p>
-              <span class="brief-badge" id="brief-badge">Guided continuation</span>
-            </div>
-
-            <div class="route-summary-copy">
-              <strong id="route-short">TON → STON</strong>
-              <p id="route-stance">One obvious ecosystem first step for a brand-new TON user.</p>
-            </div>
-
-            <div class="route-summary-foot">
-              <span>After</span>
-              <strong id="orbit-next-tag">Tonstakers-ready</strong>
-            </div>
-          </div>
-        </section>
-      </aside>
-
-      <section class="intelligence-section panel-light" id="project-notes">
-        <div class="section-heading">
-          <p class="eyebrow">Decision Lab</p>
-          <h2>Check the route with live protocol data before the wallet prompt.</h2>
           <p class="section-copy" id="lab-summary">
             Loading official STON.fi market data for the route, continuation, and wallet-aware layer.
           </p>
@@ -379,7 +389,7 @@
             </div>
 
             <p class="intel-copy">
-              This reads the wallet through official STON.fi asset endpoints and turns it into one calm next action.
+              Read the wallet through official STON.fi asset endpoints and collapse it into one calm next action.
             </p>
 
             <form class="wallet-form" id="wallet-form">
@@ -497,10 +507,12 @@
     </main>
 
     <footer class="site-footer">
-      <p>TON Compass is a live STON.fi hackathon build with guided routes, official quote checks, wallet-aware next steps, and a Tonstakers-ready continuation.</p>
+      <p>
+        TON Compass is a live STON.fi hackathon build with guided routes, official quote checks, wallet-aware next steps, and a Tonstakers-ready continuation.
+      </p>
     </footer>
 
     <script src="https://widget.ston.fi/v0/index.js"></script>
-    <script src="./app.js?v=20260411g" type="module"></script>
+    <script src="./app.js?v=20260412a" type="module"></script>
   </body>
 </html>

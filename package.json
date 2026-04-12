@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "deck:build": "node submission/deck-src/ton_compass_demo_deck.cjs"
+    "deck:build": "node submission/deck-src/ton_compass_demo_deck.cjs",
+    "ui:audit": "node scripts/ui_audit.mjs"
   },
   "dependencies": {
     "pptxgenjs": "^4.0.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.1"
   }
 }
