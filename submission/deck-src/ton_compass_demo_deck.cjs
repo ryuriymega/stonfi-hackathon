@@ -156,7 +156,7 @@ function finalizeSlide(slide) {
     slide,
     "STON.fi VIBE CODING HACKATHON",
     "TON Compass",
-    "A guided first-move app for TON DeFi built on top of the official STON.fi execution layer.",
+    "A guided first-move app for TON DeFi built on top of the official STON.fi execution and data layer.",
     { x: 1.25, y: 0.55, fontSize: 28, titleW: 4.55, bodyW: 4.2, bodyH: 0.42 }
   );
 
@@ -173,7 +173,7 @@ function finalizeSlide(slide) {
   });
 
   slide.addText(
-    "Journey Builder, readiness preflight, live STON.fi swap execution, and a Tonstakers-ready next step.",
+    "Journey Builder, live quote checks, wallet-aware hints, official STON.fi execution, and a Tonstakers-ready continuation.",
     {
       x: 0.8,
       y: 4.08,
@@ -187,8 +187,8 @@ function finalizeSlide(slide) {
   );
 
   addCard(slide, 0.8, 4.48, 1.4, 1.1, "Live layer", "Official STON.fi widget", "FFFFFF");
-  addCard(slide, 2.35, 4.48, 1.4, 1.1, "Product", "Route guidance + readiness", "FFFFFF");
-  addCard(slide, 3.9, 4.48, 1.4, 1.1, "After", "Tonstakers continuation", "FFFFFF");
+  addCard(slide, 2.35, 4.48, 1.4, 1.1, "Decision", "Live quote + wallet hints", "FFFFFF");
+  addCard(slide, 3.9, 4.48, 1.4, 1.1, "After", "Tonstakers + Telegram", "FFFFFF");
 
   slide.addShape(pptx.ShapeType.roundRect, {
     x: 6.1,
@@ -205,7 +205,7 @@ function finalizeSlide(slide) {
     ...imageSizingContain(screenshotPath, 6.35, 0.95, 5.5, 5.3),
   });
 
-  addFooter(slide, "TON Compass | Live demo already online");
+  addFooter(slide, "TON Compass | Guided route + live decision layer");
   finalizeSlide(slide);
 }
 
@@ -292,7 +292,7 @@ function finalizeSlide(slide) {
     slide,
     "PRODUCT FLOW",
     "A small app with a real onboarding sequence.",
-    "The product adds just enough structure around the official widget to feel like a real TON journey rather than a one-screen embed.",
+    "The product adds just enough structure around the official widget and public data layer to feel like a real TON journey rather than a one-screen embed.",
     { x: 0.8, y: 0.65, titleW: 5.5, bodyW: 5.4, fontSize: 24, bodyH: 0.62 }
   );
 
@@ -311,14 +311,14 @@ function finalizeSlide(slide) {
     },
     {
       x: 6.7,
-      title: "3. STON.fi execution",
-      body: "The real swap stays inside the official Omniston widget. No fake on-chain flow.",
+      title: "3. Decision Lab",
+      body: "Pulls live STON.fi route simulation and wallet-aware hints from official public endpoints.",
       fill: "FFFFFF",
     },
     {
       x: 9.65,
-      title: "4. Tonstakers continuation",
-      body: "After the first swap, the user gets a credible next action instead of a dead end.",
+      title: "4. Continuation",
+      body: "The real swap stays in STON.fi, then Tonstakers and Telegram keep the journey alive.",
       fill: "FFFFFF",
     },
   ];
@@ -347,7 +347,7 @@ function finalizeSlide(slide) {
     line: { color: COLORS.panel, pt: 1 },
   });
   slide.addText(
-    "Result: a beginner can move from uncertainty -> guided choice -> real swap -> TON-native continuation without ever leaving a coherent product surface.",
+    "Result: a beginner can move from uncertainty -> guided choice -> live quote -> real swap -> TON-native continuation without ever leaving a coherent product surface.",
     {
       x: 1.0,
     y: 5.77,
@@ -362,7 +362,7 @@ function finalizeSlide(slide) {
     }
   );
 
-  addFooter(slide, "Journey Builder -> Readiness -> STON.fi -> Tonstakers");
+  addFooter(slide, "Journey Builder -> Readiness -> Decision Lab -> Continuation");
   finalizeSlide(slide);
 }
 
@@ -378,9 +378,9 @@ function finalizeSlide(slide) {
     { x: 0.8, y: 0.65, titleW: 6.0, bodyW: 5.8, fontSize: 24, bodyH: 0.62 }
   );
 
-  addCard(slide, 0.8, 3.0, 3.45, 1.7, "Real integration", "Execution goes through the official STON.fi widget. The demo is not faking the core user action.", "FFFFFF");
-  addCard(slide, 4.55, 3.0, 3.45, 1.7, "Real product logic", "Route recommendation, readiness gating, and shareable modes create a reusable onboarding system.", "FFFFFF");
-  addCard(slide, 8.3, 3.0, 3.45, 1.7, "Real continuation", "Tonstakers shows how this can expand into a broader TON journey instead of stopping at swap.", "FFFFFF");
+  addCard(slide, 0.8, 3.0, 3.45, 1.7, "Real integration", "Execution goes through the official STON.fi widget and live protocol quotes come from official public STON.fi endpoints.", "FFFFFF");
+  addCard(slide, 4.55, 3.0, 3.45, 1.7, "Real product logic", "Route recommendation, readiness gating, live quote checks, and wallet-aware hints create a reusable onboarding system.", "FFFFFF");
+  addCard(slide, 8.3, 3.0, 3.45, 1.7, "Real continuation", "Tonstakers plus Telegram continuity show how this can expand into a broader TON journey instead of stopping at swap.", "FFFFFF");
 
   slide.addText("What reviewers can see immediately", {
     x: 0.8,
@@ -398,7 +398,7 @@ function finalizeSlide(slide) {
   const bullets = [
     "There is a live public URL",
     "There is a public GitHub repo",
-    "The app already supports a real user journey",
+    "The app already supports a real user journey plus a live decision layer",
     "The scope is still realistic for a hackathon build",
   ];
   slide.addText(
@@ -425,7 +425,7 @@ function finalizeSlide(slide) {
     fill: { color: COLORS.lime },
     line: { color: COLORS.lime, pt: 1 },
   });
-  slide.addText("TON Compass is not a swap clone. It is an onboarding product on top of STON.fi.", {
+  slide.addText("TON Compass is not a swap clone. It is an onboarding and decision product on top of STON.fi.", {
     x: 6.95,
     y: 5.42,
     w: 4.45,
@@ -484,16 +484,27 @@ function finalizeSlide(slide) {
     color: COLORS.white,
     margin: 0,
   });
-  slide.addText("https://forlearningandcerts.sellsystems.agency:49184/ton-compass/index.html", {
+  slide.addText("Open live web app", {
     x: 0.8,
     y: 2.35,
-    w: 5.8,
-    h: 0.35,
+    w: 3.0,
+    h: 0.3,
     fontFace: "Liberation Sans",
-    fontSize: 14,
+    fontSize: 15,
+    bold: true,
     color: COLORS.lime,
     margin: 0,
     hyperlink: { url: "https://forlearningandcerts.sellsystems.agency:49184/ton-compass/index.html" },
+  });
+  slide.addText("forlearningandcerts.sellsystems.agency:49184/ton-compass", {
+    x: 0.8,
+    y: 2.68,
+    w: 5.2,
+    h: 0.28,
+    fontFace: "Liberation Sans",
+    fontSize: 11.5,
+    color: "B7C1D1",
+    margin: 0,
   });
 
   slide.addText("GitHub", {
@@ -507,16 +518,27 @@ function finalizeSlide(slide) {
     color: COLORS.white,
     margin: 0,
   });
-  slide.addText("https://github.com/ryuriymega/stonfi-hackathon", {
+  slide.addText("Open GitHub repository", {
     x: 0.8,
     y: 3.45,
-    w: 4.6,
-    h: 0.35,
+    w: 3.2,
+    h: 0.3,
     fontFace: "Liberation Sans",
-    fontSize: 14,
+    fontSize: 15,
+    bold: true,
     color: COLORS.lime,
     margin: 0,
     hyperlink: { url: "https://github.com/ryuriymega/stonfi-hackathon" },
+  });
+  slide.addText("github.com/ryuriymega/stonfi-hackathon", {
+    x: 0.8,
+    y: 3.78,
+    w: 4.4,
+    h: 0.28,
+    fontFace: "Liberation Sans",
+    fontSize: 11.5,
+    color: "B7C1D1",
+    margin: 0,
   });
 
   slide.addShape(pptx.ShapeType.roundRect, {
@@ -541,7 +563,7 @@ function finalizeSlide(slide) {
     characterSpacing: 1.8,
   });
   slide.addText(
-    "TON Compass is a guided first-move app for TON DeFi. It recommends the right route, adds a readiness layer before wallet connection, executes through the official STON.fi widget, and then offers a Tonstakers-ready continuation path.",
+    "TON Compass is a guided first-move app for TON DeFi. It recommends the right route, adds a readiness layer before wallet connection, checks the route with live STON.fi data, executes through the official STON.fi widget, and then offers a Tonstakers-ready continuation path.",
     {
       x: 7.55,
       y: 2.05,
@@ -555,7 +577,7 @@ function finalizeSlide(slide) {
     }
   );
   slide.addText(
-    "That makes it feel like the start of a TON journey, not just another swap clone.",
+    "That makes it feel like the start of a TON journey, not just another swap clone or widget wrapper.",
     {
       x: 7.55,
       y: 3.55,
