@@ -190,8 +190,21 @@
           </div>
         </article>
 
-        <div class="command-rail">
-          <article class="readiness-card rail-section">
+      </section>
+
+      <section class="support-section intelligence-section" id="project-notes">
+        <div class="section-heading support-heading">
+          <div>
+            <p class="eyebrow">Support systems</p>
+            <h2>Keep readiness, continuation, and live checks in one operational layer.</h2>
+          </div>
+          <p class="section-copy" id="lab-summary">
+            Loading official STON.fi market data for the route, continuation, and wallet-aware layer.
+          </p>
+        </div>
+
+        <div class="support-overview">
+          <article class="readiness-card support-card">
             <div class="readiness-topline">
               <div>
                 <p class="prep-label">Swap readiness</p>
@@ -207,7 +220,7 @@
             <div class="readiness-list" id="readiness-list"></div>
           </article>
 
-          <section class="after-route-card rail-section">
+          <section class="after-route-card support-card">
             <div class="after-route-head">
               <div class="after-route-topline">
                 <p class="prep-label">After this route</p>
@@ -220,8 +233,8 @@
               </p>
             </div>
 
-            <div class="after-route-grid">
-              <article class="after-route-block after-route-block-next">
+            <div class="after-route-columns">
+              <div class="after-route-primary">
                 <p class="after-block-label">Official continuation</p>
                 <p class="next-followup" id="next-followup">
                   After the first move, Compass Pro can keep watching for the next one.
@@ -240,9 +253,9 @@
                 <p class="fine-print" id="next-note">
                   Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least 2.2 TON in wallet to cover reserved fees.
                 </p>
-              </article>
+              </div>
 
-              <article class="after-route-block after-route-block-pro" id="compass-pro">
+              <div class="after-route-secondary" id="compass-pro">
                 <div class="subscription-topline">
                   <p class="after-block-label">Compass Pro</p>
                   <span class="pro-state">Free now</span>
@@ -274,7 +287,7 @@
                 <p class="pro-footnote" id="pro-footnote">
                   Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.
                 </p>
-              </article>
+              </div>
             </div>
 
             <div class="route-summary route-summary-compact">
@@ -295,21 +308,20 @@
             </div>
           </section>
         </div>
-      </section>
 
-      <section class="intelligence-section" id="project-notes">
-        <div class="section-heading intelligence-heading">
-          <div>
-            <p class="eyebrow">Decision Lab</p>
-            <h2>Check the route with live protocol data before the wallet prompt.</h2>
+        <section class="support-lab">
+          <div class="support-lab-head">
+            <div>
+              <p class="eyebrow">Decision Lab</p>
+              <h3>Use live protocol data to pressure-test the route.</h3>
+            </div>
+            <p class="section-copy support-lab-copy">
+              Quotes, wallet balances, and Tonstakers constraints should read as one operational strip, not as disconnected widgets.
+            </p>
           </div>
-          <p class="section-copy" id="lab-summary">
-            Loading official STON.fi market data for the route, continuation, and wallet-aware layer.
-          </p>
-        </div>
 
-        <div class="intelligence-grid">
-          <article class="intel-card">
+          <div class="support-lab-grid">
+            <article class="intel-card support-card support-quote">
             <div class="intel-head">
               <div>
                 <p class="intel-kicker">Live simulation</p>
@@ -379,7 +391,7 @@
             </p>
           </article>
 
-          <article class="intel-card">
+            <article class="intel-card support-card support-wallet">
             <div class="intel-head">
               <div>
                 <p class="intel-kicker">Wallet-aware route</p>
@@ -437,7 +449,7 @@
             </button>
           </article>
 
-          <article class="intel-card">
+            <article class="intel-card support-card support-staking">
             <div class="intel-head">
               <div>
                 <p class="intel-kicker">Tonstakers continuation</p>
@@ -502,7 +514,8 @@
               Live market figures come from official STON.fi endpoints. Staking constraints come from official Tonstakers docs and FAQ.
             </p>
           </article>
-        </div>
+          </div>
+        </section>
       </section>
     </main>
 

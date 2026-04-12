@@ -351,21 +351,14 @@ input:focus-visible {
   gap: 20px;
 }
 
-.command-rail {
-  display: grid;
-  grid-template-columns: minmax(320px, 400px) minmax(0, 1fr);
-  gap: 20px;
-  min-width: 0;
-}
-
-.rail-section,
+.support-section,
 .swap-panel,
 .intelligence-section {
   min-width: 0;
   border: 1px solid var(--line);
 }
 
-.rail-section {
+.support-card {
   display: grid;
   gap: 14px;
   padding: 18px;
@@ -677,9 +670,10 @@ input:focus-visible {
 }
 
 .after-route-card {
-  background:
-    radial-gradient(circle at top left, rgba(114, 248, 179, 0.08), transparent 26%),
-    linear-gradient(180deg, rgba(12, 17, 26, 0.98), rgba(9, 13, 20, 0.98));
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 18px;
 }
 
 .after-route-head {
@@ -687,18 +681,20 @@ input:focus-visible {
   gap: 8px;
 }
 
-.after-route-grid {
+.after-route-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 14px;
 }
 
-.after-route-block {
+.after-route-primary,
+.after-route-secondary {
   display: grid;
   gap: 10px;
+  align-content: start;
   padding: 14px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   background: rgba(255, 255, 255, 0.03);
 }
 
@@ -884,30 +880,175 @@ input:focus-visible {
   container-type: inline-size;
 }
 
+.support-heading,
 .intelligence-heading {
   align-items: end;
 }
 
+.support-heading .section-copy,
 .intelligence-heading .section-copy {
   max-width: 38rem;
 }
 
-.intelligence-grid {
+.support-overview {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.6fr);
+  gap: 12px;
   border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.support-lab {
+  display: grid;
+  gap: 18px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.support-lab-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.support-lab-head h3 {
+  margin: 4px 0 0;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.support-lab-copy {
+  max-width: 34rem;
+}
+
+.support-lab-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.support-section .support-card {
+  gap: 12px;
+  padding: 14px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .intel-card {
   display: grid;
   gap: 16px;
-  padding: 22px 18px 6px 0;
 }
 
-.intel-card + .intel-card {
-  padding-left: 22px;
-  border-left: 1px solid var(--line);
+.support-quote {
+  grid-column: span 5;
+}
+
+.support-wallet {
+  grid-column: span 3;
+}
+
+.support-staking {
+  grid-column: span 4;
+}
+
+.support-section .after-route-card {
+  padding-top: 14px;
+}
+
+.support-section .after-route-primary,
+.support-section .after-route-secondary,
+.support-section .route-summary,
+.support-section .pro-list li,
+.support-section .quote-stat,
+.support-section .wallet-balance,
+.support-section .constraint-item {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.support-section .after-route-columns {
+  gap: 18px;
+}
+
+.support-section .after-route-primary,
+.support-section .after-route-secondary {
+  gap: 12px;
+  align-content: start;
+}
+
+.support-section .route-summary {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.support-section .route-summary-topline {
+  grid-column: 1 / -1;
+}
+
+.support-section .route-summary-copy {
+  gap: 4px;
+}
+
+.support-section .route-summary-foot {
+  justify-content: flex-end;
+}
+
+.support-section .pro-list {
+  gap: 0;
+}
+
+.support-section .pro-list li,
+.support-section .quote-stat,
+.support-section .wallet-balance,
+.support-section .constraint-item,
+.support-section .readiness-item {
+  min-height: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.support-section .pro-list li:last-child,
+.support-section .quote-grid > .quote-stat:nth-last-child(-n + 2),
+.support-section .wallet-grid > .wallet-balance:last-child,
+.support-section .constraint-list > .constraint-item:last-child,
+.support-section .readiness-list > .readiness-item:last-child {
+  border-bottom: 0;
+}
+
+.support-section .pro-list li::before {
+  left: 0;
+  top: 16px;
+}
+
+.support-section .pro-list li {
+  padding-left: 26px;
+}
+
+.support-section .readiness-list {
+  gap: 0;
+}
+
+.support-section .readiness-item {
+  grid-template-columns: 14px minmax(0, 1fr);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.support-section .readiness-item.done {
+  background: transparent;
 }
 
 .intel-head {
@@ -1072,25 +1213,16 @@ input:focus-visible {
   }
 }
 
-@container (max-width: 930px) {
-  .intelligence-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .intel-card {
-    padding: 18px 0;
-  }
-
-  .intel-card + .intel-card {
-    padding-left: 0;
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-}
-
 @media (max-width: 1180px) {
-  .command-rail {
-    grid-template-columns: 1fr;
+  .support-overview,
+  .support-lab-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .support-quote,
+  .support-wallet,
+  .support-staking {
+    grid-column: auto;
   }
 
   .stage-grid {
@@ -1114,6 +1246,16 @@ input:focus-visible {
 @media (max-width: 860px) {
   :root {
     --content-width: calc(100% - 20px);
+  }
+
+  .support-overview,
+  .support-lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-lab-head {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .site-header {
@@ -1159,13 +1301,13 @@ input:focus-visible {
     width: 100%;
   }
 
-  .after-route-grid,
+  .after-route-columns,
   .planner-links {
     grid-template-columns: 1fr;
   }
 
   .swap-panel,
-  .rail-section,
+  .support-card,
   .intelligence-section {
     padding: 16px;
     border-radius: 24px;
@@ -1222,7 +1364,7 @@ input:focus-visible {
   }
 
   .swap-panel,
-  .rail-section,
+  .support-card,
   .intelligence-section {
     padding: 14px;
     border-radius: 22px;
@@ -1257,6 +1399,10 @@ input:focus-visible {
 
   .route-rail {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .support-grid {
+    grid-template-columns: 1fr;
   }
 
   .route-switch {
