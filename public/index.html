@@ -195,133 +195,131 @@
       <section class="support-section intelligence-section" id="project-notes">
         <div class="section-heading support-heading">
           <div>
-            <p class="eyebrow">Support systems</p>
-            <h2>Keep readiness, continuation, and live checks in one operational layer.</h2>
+            <p class="eyebrow">Operational support</p>
+            <h2>Pressure-test the route before the user leaves the page.</h2>
           </div>
           <p class="section-copy" id="lab-summary">
-            Loading official STON.fi market data for the route, continuation, and wallet-aware layer.
+            Loading official STON.fi market data for the active route, the wallet-aware layer, and the Tonstakers handoff.
           </p>
         </div>
 
-        <div class="support-overview">
-          <article class="readiness-card support-card">
-            <div class="readiness-topline">
-              <div>
-                <p class="prep-label">Swap readiness</p>
-                <h2 id="readiness-title">Complete the preflight before opening the wallet.</h2>
-              </div>
-              <strong class="readiness-score" id="readiness-score">0%</strong>
-            </div>
-
-            <div class="readiness-bar" aria-hidden="true">
-              <span id="readiness-bar-fill"></span>
-            </div>
-
-            <div class="readiness-list" id="readiness-list"></div>
-          </article>
-
-          <section class="after-route-card support-card">
-            <div class="after-route-head">
-              <div class="after-route-topline">
-                <p class="prep-label">After this route</p>
-                <span class="next-badge" id="next-badge">Optional handoff</span>
+        <div class="support-layout">
+          <div class="support-rail">
+            <article class="readiness-card support-card">
+              <div class="readiness-topline">
+                <div>
+                  <p class="prep-label">Swap readiness</p>
+                  <h2 id="readiness-title">Complete the preflight before opening the wallet.</h2>
+                </div>
+                <strong class="readiness-score" id="readiness-score">0%</strong>
               </div>
 
-              <h2 id="next-title">Continue into Tonstakers when the user wants yield</h2>
-              <p id="next-copy">
-                Keep the first swap simple, then offer an official staking route for users who prefer a TON-denominated next step.
-              </p>
-            </div>
-
-            <div class="after-route-columns">
-              <div class="after-route-primary">
-                <p class="after-block-label">Official continuation</p>
-                <p class="next-followup" id="next-followup">
-                  After the first move, Compass Pro can keep watching for the next one.
-                </p>
-
-                <a
-                  class="primary-link next-link"
-                  id="next-link"
-                  href="https://app.tonstakers.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open official Tonstakers app
-                </a>
-
-                <p class="fine-print" id="next-note">
-                  Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least 2.2 TON in wallet to cover reserved fees.
-                </p>
+              <div class="readiness-bar" aria-hidden="true">
+                <span id="readiness-bar-fill"></span>
               </div>
 
-              <div class="after-route-secondary" id="compass-pro">
-                <div class="subscription-topline">
-                  <p class="after-block-label">Compass Pro</p>
-                  <span class="pro-state">Free now</span>
+              <div class="readiness-list" id="readiness-list"></div>
+            </article>
+
+            <section class="after-route-card support-card">
+              <div class="after-route-head">
+                <div class="after-route-topline">
+                  <p class="prep-label">After this route</p>
+                  <span class="next-badge" id="next-badge">Optional handoff</span>
                 </div>
 
-                <div class="subscription-copy">
-                  <h3 id="pro-title">Stay in the loop after the swap.</h3>
-                  <p id="pro-copy">
-                    Keep the route alive in Telegram with saved paths, next-move prompts, and a calmer return into TON action.
+                <h2 id="next-title">Continue into Tonstakers when the user wants yield</h2>
+                <p id="next-copy">
+                  Keep the first swap simple, then offer an official staking route for users who prefer a TON-denominated next step.
+                </p>
+              </div>
+
+              <div class="after-route-columns">
+                <div class="after-route-primary">
+                  <p class="after-block-label">Official continuation</p>
+                  <p class="next-followup" id="next-followup">
+                    After the first move, Compass Pro can keep watching for the next one.
+                  </p>
+
+                  <a
+                    class="primary-link next-link"
+                    id="next-link"
+                    href="https://app.tonstakers.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open official Tonstakers app
+                  </a>
+
+                  <p class="fine-print" id="next-note">
+                    Tonstakers official FAQ says staking starts from 1 TON, but a user should keep at least 2.2 TON in wallet to cover reserved fees.
                   </p>
                 </div>
 
-                <ul class="pro-list" id="pro-list">
-                  <li>Telegram alerts</li>
-                  <li>Saved route watchlists</li>
-                  <li>Weekly wallet digest</li>
-                </ul>
+                <div class="after-route-secondary" id="compass-pro">
+                  <div class="subscription-topline">
+                    <p class="after-block-label">Compass Pro</p>
+                    <span class="pro-state">Free now</span>
+                  </div>
 
-                <a
-                  class="primary-link pro-cta"
-                  id="pro-cta"
-                  href="https://t.me/share/url"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Send route to Telegram
-                </a>
+                  <div class="subscription-copy">
+                    <h3 id="pro-title">Stay in the loop after the swap.</h3>
+                    <p id="pro-copy">
+                      Keep the route alive in Telegram with saved paths, next-move prompts, and a calmer return into TON action.
+                    </p>
+                  </div>
 
-                <p class="pro-footnote" id="pro-footnote">
-                  Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.
-                </p>
+                  <ul class="pro-list" id="pro-list">
+                    <li>Telegram alerts</li>
+                    <li>Saved route watchlists</li>
+                    <li>Weekly wallet digest</li>
+                  </ul>
+
+                  <a
+                    class="primary-link pro-cta"
+                    id="pro-cta"
+                    href="https://t.me/share/url"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Send route to Telegram
+                  </a>
+
+                  <p class="pro-footnote" id="pro-footnote">
+                    Free at launch. Telegram subscriptions later for advanced alerts and weekly digests.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="route-summary route-summary-compact">
-              <div class="route-summary-topline">
-                <p class="hero-chip">Route note</p>
-                <span class="brief-badge" id="brief-badge">Guided continuation</span>
+              <div class="route-summary route-summary-inline">
+                <div class="route-summary-topline">
+                  <p class="hero-chip">Route note</p>
+                  <span class="brief-badge" id="brief-badge">Guided continuation</span>
+                </div>
+
+                <div class="route-summary-copy">
+                  <strong id="route-short">TON → STON</strong>
+                  <p id="route-stance">One obvious ecosystem first step for a brand-new TON user.</p>
+                </div>
+
+                <div class="route-summary-foot">
+                  <span>After</span>
+                  <strong id="orbit-next-tag">Tonstakers-ready</strong>
+                </div>
               </div>
-
-              <div class="route-summary-copy">
-                <strong id="route-short">TON → STON</strong>
-                <p id="route-stance">One obvious ecosystem first step for a brand-new TON user.</p>
-              </div>
-
-              <div class="route-summary-foot">
-                <span>After</span>
-                <strong id="orbit-next-tag">Tonstakers-ready</strong>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <section class="support-lab">
-          <div class="support-lab-head">
-            <div>
-              <p class="eyebrow">Decision Lab</p>
-              <h3>Use live protocol data to pressure-test the route.</h3>
-            </div>
-            <p class="section-copy support-lab-copy">
-              Quotes, wallet balances, and Tonstakers constraints should read as one operational strip, not as disconnected widgets.
-            </p>
+            </section>
           </div>
 
-          <div class="support-lab-grid">
-            <article class="intel-card support-card support-quote">
+          <section class="support-lab">
+            <div class="support-lab-head">
+              <div>
+                <p class="eyebrow">Decision Lab</p>
+                <h3>Pressure-test the route with live data.</h3>
+              </div>
+            </div>
+
+            <div class="support-lab-grid">
+              <article class="intel-card support-card support-quote">
             <div class="intel-head">
               <div>
                 <p class="intel-kicker">Live simulation</p>
@@ -391,131 +389,134 @@
             </p>
           </article>
 
-            <article class="intel-card support-card support-wallet">
-            <div class="intel-head">
-              <div>
-                <p class="intel-kicker">Wallet-aware route</p>
-                <h3>Turn a wallet into the next move.</h3>
+              <div class="support-side-stack">
+                <article class="intel-card support-card support-wallet">
+                  <div class="intel-head">
+                    <div>
+                      <p class="intel-kicker">Wallet-aware route</p>
+                      <h3>Read the wallet before the next move.</h3>
+                    </div>
+                    <span class="intel-badge" id="wallet-status">Paste a wallet</span>
+                  </div>
+
+                  <p class="intel-copy">
+                    Paste a TON wallet and collapse the balances into one calmer route recommendation.
+                  </p>
+
+                  <form class="wallet-form" id="wallet-form">
+                    <label class="field-stack" for="wallet-address">
+                      <span class="field-label">TON wallet address</span>
+                      <input
+                        class="amount-input wallet-input"
+                        id="wallet-address"
+                        name="address"
+                        type="text"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="EQ..."
+                      />
+                    </label>
+
+                    <button class="secondary-link wallet-submit" type="submit">Analyze wallet</button>
+                  </form>
+
+                  <div class="wallet-grid" id="wallet-balance-grid">
+                    <article class="wallet-balance">
+                      <span>TON</span>
+                      <strong>-</strong>
+                    </article>
+                    <article class="wallet-balance">
+                      <span>STON</span>
+                      <strong>-</strong>
+                    </article>
+                    <article class="wallet-balance">
+                      <span>tsTON</span>
+                      <strong>-</strong>
+                    </article>
+                  </div>
+
+                  <div class="wallet-recommendation">
+                    <p class="wallet-route-label">Suggested route</p>
+                    <h3 id="wallet-route-title">Waiting for a wallet</h3>
+                    <p class="intel-copy wallet-route-copy" id="wallet-route-copy">
+                      Once a wallet is pasted, TON Compass will turn balances into a route recommendation and a concrete continuation.
+                    </p>
+                  </div>
+
+                  <button class="primary-link wallet-apply" id="wallet-apply-route" type="button" disabled>
+                    Apply suggested route
+                  </button>
+                </article>
+
+                <article class="intel-card support-card support-staking">
+                  <div class="intel-head">
+                    <div>
+                      <p class="intel-kicker">Tonstakers continuation</p>
+                      <h3>Keep the staking handoff honest.</h3>
+                    </div>
+                    <span class="intel-badge" id="tonstakers-status">Loading</span>
+                  </div>
+
+                  <p class="intel-copy">
+                    Blend official Tonstakers constraints with live TON ↔ tsTON market signals before you hand the user off.
+                  </p>
+
+                  <dl class="quote-grid planner-grid">
+                    <div class="quote-stat">
+                      <dt>1 TON via STON.fi now</dt>
+                      <dd id="tston-market-out">-</dd>
+                    </div>
+                    <div class="quote-stat">
+                      <dt>TON needed for 1 tsTON</dt>
+                      <dd id="tston-market-in">-</dd>
+                    </div>
+                    <div class="quote-stat">
+                      <dt>tsTON market premium</dt>
+                      <dd id="tston-premium">-</dd>
+                    </div>
+                    <div class="quote-stat">
+                      <dt>STON per TON reference</dt>
+                      <dd id="ston-per-ton">-</dd>
+                    </div>
+                  </dl>
+
+                  <ul class="constraint-list">
+                    <li class="constraint-item">
+                      <span class="constraint-label">Official minimum</span>
+                      <strong>1 TON to stake</strong>
+                    </li>
+                    <li class="constraint-item">
+                      <span class="constraint-label">Wallet reserve</span>
+                      <strong>Keep about 2.2 TON available</strong>
+                    </li>
+                    <li class="constraint-item">
+                      <span class="constraint-label">Instant exit</span>
+                      <strong>Depends on pool liquidity</strong>
+                    </li>
+                  </ul>
+
+                  <div class="planner-links">
+                    <a class="primary-link" href="https://app.tonstakers.com/" target="_blank" rel="noreferrer">
+                      Open official Tonstakers app
+                    </a>
+                    <a
+                      class="ghost-link planner-faq-link"
+                      href="https://tonstakers.com/faq/en/article/withdrawing-ton-from-liquid-staking"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Tonstakers FAQ
+                    </a>
+                  </div>
+
+                  <p class="fine-print" id="tonstakers-note">
+                    Live market figures come from official STON.fi endpoints. Staking constraints come from official Tonstakers docs and FAQ.
+                  </p>
+                </article>
               </div>
-              <span class="intel-badge" id="wallet-status">Paste a wallet</span>
             </div>
-
-            <p class="intel-copy">
-              Read the wallet through official STON.fi asset endpoints and collapse it into one calm next action.
-            </p>
-
-            <form class="wallet-form" id="wallet-form">
-              <label class="field-stack" for="wallet-address">
-                <span class="field-label">TON wallet address</span>
-                <input
-                  class="amount-input wallet-input"
-                  id="wallet-address"
-                  name="address"
-                  type="text"
-                  autocomplete="off"
-                  spellcheck="false"
-                  placeholder="EQ..."
-                />
-              </label>
-
-              <button class="secondary-link wallet-submit" type="submit">Analyze wallet</button>
-            </form>
-
-            <div class="wallet-grid" id="wallet-balance-grid">
-              <article class="wallet-balance">
-                <span>TON</span>
-                <strong>-</strong>
-              </article>
-              <article class="wallet-balance">
-                <span>STON</span>
-                <strong>-</strong>
-              </article>
-              <article class="wallet-balance">
-                <span>tsTON</span>
-                <strong>-</strong>
-              </article>
-            </div>
-
-            <div class="wallet-recommendation">
-              <p class="wallet-route-label">Suggested route</p>
-              <h3 id="wallet-route-title">Waiting for a wallet</h3>
-              <p class="intel-copy wallet-route-copy" id="wallet-route-copy">
-                Once a wallet is pasted, TON Compass will turn balances into a route recommendation and a concrete continuation.
-              </p>
-            </div>
-
-            <button class="primary-link wallet-apply" id="wallet-apply-route" type="button" disabled>
-              Apply suggested route
-            </button>
-          </article>
-
-            <article class="intel-card support-card support-staking">
-            <div class="intel-head">
-              <div>
-                <p class="intel-kicker">Tonstakers continuation</p>
-                <h3>Keep the staking handoff honest.</h3>
-              </div>
-              <span class="intel-badge" id="tonstakers-status">Loading</span>
-            </div>
-
-            <p class="intel-copy">
-              Blend official Tonstakers constraints with live TON ↔ tsTON market signals before you hand the user off.
-            </p>
-
-            <dl class="quote-grid planner-grid">
-              <div class="quote-stat">
-                <dt>1 TON via STON.fi now</dt>
-                <dd id="tston-market-out">-</dd>
-              </div>
-              <div class="quote-stat">
-                <dt>TON needed for 1 tsTON</dt>
-                <dd id="tston-market-in">-</dd>
-              </div>
-              <div class="quote-stat">
-                <dt>tsTON market premium</dt>
-                <dd id="tston-premium">-</dd>
-              </div>
-              <div class="quote-stat">
-                <dt>STON per TON reference</dt>
-                <dd id="ston-per-ton">-</dd>
-              </div>
-            </dl>
-
-            <ul class="constraint-list">
-              <li class="constraint-item">
-                <span class="constraint-label">Official minimum</span>
-                <strong>1 TON to stake</strong>
-              </li>
-              <li class="constraint-item">
-                <span class="constraint-label">Wallet reserve</span>
-                <strong>Keep about 2.2 TON available</strong>
-              </li>
-              <li class="constraint-item">
-                <span class="constraint-label">Instant exit</span>
-                <strong>Depends on pool liquidity</strong>
-              </li>
-            </ul>
-
-            <div class="planner-links">
-              <a class="primary-link" href="https://app.tonstakers.com/" target="_blank" rel="noreferrer">
-                Open official Tonstakers app
-              </a>
-              <a
-                class="ghost-link planner-faq-link"
-                href="https://tonstakers.com/faq/en/article/withdrawing-ton-from-liquid-staking"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Tonstakers FAQ
-              </a>
-            </div>
-
-            <p class="fine-print" id="tonstakers-note">
-              Live market figures come from official STON.fi endpoints. Staking constraints come from official Tonstakers docs and FAQ.
-            </p>
-          </article>
-          </div>
-        </section>
+          </section>
+        </div>
       </section>
     </main>
 

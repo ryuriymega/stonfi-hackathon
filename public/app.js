@@ -915,7 +915,7 @@ function renderMarketSnapshot(snapshot) {
   const volumeUsd = formatUsd(dex.volumeUsd);
   const wallets = formatCompactNumber(dex.uniqueWallets);
 
-  elements.labSummary.textContent = `Official STON.fi data currently shows ${volumeUsd} in lifetime volume and ${wallets} unique wallets. TON Compass uses the same public surface for route simulation and wallet-aware guidance.`;
+  elements.labSummary.textContent = `STON.fi public data currently shows ${volumeUsd} in lifetime volume and ${wallets} wallets. Use it here for the live quote, wallet context, and Tonstakers handoff.`;
   elements.tstonMarketOut.textContent = `${formatUnits(snapshot.quotes.tston.askUnits, 9, 3)} tsTON`;
   elements.tstonMarketIn.textContent = `${formatUnits(snapshot.reverseQuotes.tston.offerUnits, 9, 3)} TON`;
   elements.tstonPremium.textContent = formatPercent(snapshot.derived.tsTonPremiumPct, 2);
@@ -998,7 +998,7 @@ async function loadMarketSnapshot() {
   } catch (error) {
     console.error("Failed to load market snapshot", error);
     elements.labSummary.textContent =
-      "Official market data failed to load. The live swap still works, but the Decision Lab needs a retry.";
+      "Official market data failed to load. The swap still works, but the Decision Lab needs a retry.";
     setSimulationStatus("Error");
     elements.tonstakersStatus.textContent = "Error";
     elements.simulationNote.textContent =

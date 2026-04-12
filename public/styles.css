@@ -890,26 +890,35 @@ input:focus-visible {
   max-width: 38rem;
 }
 
-.support-overview {
+.support-layout {
   display: grid;
-  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.6fr);
-  gap: 12px;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
+  grid-template-columns: minmax(320px, 0.86fr) minmax(0, 1.44fr);
+  gap: 22px;
+  align-items: start;
 }
 
+.support-rail,
 .support-lab {
   display: grid;
   gap: 18px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 18px;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
+}
+
+.support-rail {
+  align-content: start;
+}
+
+.support-lab {
+  min-height: 100%;
 }
 
 .support-lab-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .support-lab-head h3 {
@@ -920,24 +929,25 @@ input:focus-visible {
   letter-spacing: -0.045em;
 }
 
-.support-lab-copy {
-  max-width: 34rem;
-}
-
 .support-lab-grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: minmax(0, 1.16fr) minmax(290px, 0.84fr);
+  gap: 18px;
 }
 
 .support-section .support-card {
   gap: 12px;
-  padding: 14px 0 0;
+  padding: 0;
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.support-rail > .support-card + .support-card,
+.support-side-stack > .support-card + .support-card {
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .intel-card {
@@ -946,19 +956,18 @@ input:focus-visible {
 }
 
 .support-quote {
-  grid-column: span 5;
+  padding-right: 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.support-wallet {
-  grid-column: span 3;
-}
-
-.support-staking {
-  grid-column: span 4;
+.support-side-stack {
+  display: grid;
+  gap: 18px;
+  align-content: start;
 }
 
 .support-section .after-route-card {
-  padding-top: 14px;
+  gap: 16px;
 }
 
 .support-section .after-route-primary,
@@ -976,7 +985,8 @@ input:focus-visible {
 }
 
 .support-section .after-route-columns {
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .support-section .after-route-primary,
@@ -988,11 +998,16 @@ input:focus-visible {
 .support-section .route-summary {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 12px;
+  gap: 10px 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .support-section .route-summary-topline {
   grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .support-section .route-summary-copy {
@@ -1214,15 +1229,17 @@ input:focus-visible {
 }
 
 @media (max-width: 1180px) {
-  .support-overview,
-  .support-lab-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .support-layout,
+  .support-lab-grid,
+  .support-side-stack {
+    grid-template-columns: 1fr;
   }
 
-  .support-quote,
-  .support-wallet,
-  .support-staking {
-    grid-column: auto;
+  .support-quote {
+    padding-right: 0;
+    padding-bottom: 18px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .stage-grid {
@@ -1248,14 +1265,14 @@ input:focus-visible {
     --content-width: calc(100% - 20px);
   }
 
-  .support-overview,
-  .support-lab-grid {
+  .support-layout,
+  .support-lab-grid,
+  .support-side-stack {
     grid-template-columns: 1fr;
   }
 
   .support-lab-head {
-    flex-direction: column;
-    align-items: stretch;
+    padding-bottom: 12px;
   }
 
   .site-header {
@@ -1307,10 +1324,15 @@ input:focus-visible {
   }
 
   .swap-panel,
-  .support-card,
   .intelligence-section {
     padding: 16px;
     border-radius: 24px;
+  }
+
+  .support-rail,
+  .support-lab {
+    padding: 16px;
+    border-radius: 22px;
   }
 
   .panel-topline h2 {
@@ -1364,10 +1386,15 @@ input:focus-visible {
   }
 
   .swap-panel,
-  .support-card,
   .intelligence-section {
     padding: 14px;
     border-radius: 22px;
+  }
+
+  .support-rail,
+  .support-lab {
+    padding: 14px;
+    border-radius: 20px;
   }
 
   .builder-section {
@@ -1399,10 +1426,6 @@ input:focus-visible {
 
   .route-rail {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .support-grid {
-    grid-template-columns: 1fr;
   }
 
   .route-switch {
